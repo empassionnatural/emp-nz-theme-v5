@@ -18,7 +18,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
-
+$bloglink = get_bloginfo('url');
 ?>
 
 <?php $actual_link = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>
@@ -39,7 +39,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
         <div class="error-box">
 <!--        wence transfer-->
-            <?php if ( 'https://vic.empassion.com.au/my-account/' === $actual_link ) : ?>
+            <?php if ( $bloglink.'/my-account/' === $actual_link ) : ?>
                 <?php wc_print_notices(); ?>
             <?php endif; ?>
         </div>
@@ -92,7 +92,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
             <div class="error-box">
 <!--        wence transfer-->
-                <?php if ( 'https://vic.empassion.com.au/register/' === $actual_link ) : ?>
+                <?php if ( $bloglink.'/register/' === $actual_link ) : ?>
                     <?php wc_print_notices(); ?>
                 <?php endif; ?>
             </div>

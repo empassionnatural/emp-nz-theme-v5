@@ -104,11 +104,7 @@ if ( ! function_exists( 'rwmb_meta' ) ) {
         return false;
     }
 }
-if ( ! function_exists( 'rwmb_the_value' ) ) {
-    function rwmb_the_value( $key, $args = '', $post_id = null, $echo = true ) {
-        return false;
-    }
-}
+
 
 add_action( 'widgets_init', 'empdev_product_banner_widget' );
 function empdev_product_banner_widget() {
