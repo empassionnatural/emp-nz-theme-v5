@@ -1,7 +1,7 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-function etheme_top_links($args = array()) {
+function empdev_etheme_top_links($args = array()) {
 
 	$links = etheme_get_links($args);
 	if( ! empty($links)) :
@@ -27,7 +27,7 @@ function etheme_top_links($args = array()) {
 
 }
 
-function etheme_get_links($args) {
+function empdev_etheme_get_links($args) {
 	extract(shortcode_atts(array(
 		'short'  => false,
 		'popups'  => true,
@@ -126,6 +126,141 @@ function etheme_get_links($args) {
 
 	return apply_filters('etheme_get_links', $links);
 }
+
+function etheme_sign_link($class = '', $short = false, $echo = false) {
+	$link = array();
+	$type = etheme_get_option( 'sign_in_type' );
+	$ht = get_query_var( 'et_ht', 'xstore' );
+	$login_link = (etheme_woocommerce_installed()) ? wc_get_page_permalink( 'myaccount' ) : wp_login_url();
+
+	if ( $ht == 'hamburger-icon' || $type == 'icon' ) {
+		$class .= ' type-icon';
+	} elseif( $type == 'text_icon' ){
+		$class .= ' type-icon-text';
+	}
+
+	if ( is_user_logged_in() && etheme_woocommerce_installed() ) {
+		if ( has_nav_menu( 'my-account' ) ) {
+			$submenu = wp_nav_menu(array(
+				'theme_location' => 'my-account',
+				'before' => '',
+				'container_class' => 'menu-main-container',
+				'after' => '',
+				'link_before' => '',
+				'link_after' => '',
+				'depth' => 100,
+				'fallback_cb' => false,
+				'walker' => new ETheme_Navigation,
+				'echo' => false
+			));
+		} else {
+			//$submenu = '<div class="">';
+			$submenu = '<ul class="menu dropdown-menu">';
+			foreach ( wc_get_account_menu_items() as $endpoint => $label ) {
+				$url = ( $endpoint != 'dashboard' ) ? wc_get_endpoint_url( $endpoint, '', $login_link ) : $login_link ;
+				$submenu .= '<li class="' . wc_get_account_menu_item_classes( $endpoint ) . '">';
+				$submenu .= '<a href="' . esc_url( $url ) . '">' . esc_html( $label ) . '</a>';
+				$submenu .= '</li>';
+			}
+			$submenu .= '</ul>';
+			//$submenu .= '</div>';
+		}
+
+		$link = array(
+			'class' => 'my-account-link' . $class,
+			'link_class' => '',
+			'href' => $login_link,
+			'title' => esc_html__( 'My Account', 'xstore' ),
+			'submenu' => $submenu
+		);
+		$class .= ' my-account-link';
+	} else {
+		$login_text = ( $short ) ? esc_html__( 'Sign In', 'xstore' ) : esc_html__( 'Sign In or Create an account', 'xstore' );
+		$login_text = ( etheme_get_option( 'sign_in_text' ) != '' ) ? etheme_get_option( 'sign_in_text' ) : $login_text;
+
+		if ( ! $short ) {
+			if ( etheme_woocommerce_installed() ) {
+				ob_start(); ?>
+                <form class="woocommerce-form woocommerce-form-login login" method="post" action="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ) ?>">
+
+					<?php do_action( 'woocommerce_login_form_start' ); ?>
+
+                    <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                        <label for="username"><?php esc_html_e( 'Username or email address', 'xstore' ); ?>&nbsp;<span class="required">*</span></label>
+                        <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username" id="username" autocomplete="username" value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( wp_unslash( $_POST['username'] ) ) : ''; ?>" /><?php // @codingStandardsIgnoreLine ?>
+                    </p>
+                    <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                        <label for="password"><?php esc_html_e( 'Password', 'xstore' ); ?>&nbsp;<span class="required">*</span></label>
+                        <input class="woocommerce-Input woocommerce-Input--text input-text" type="password" name="password" id="password" autocomplete="current-password" />
+                    </p>
+
+					<?php do_action( 'woocommerce_login_form' ); ?>
+
+                    <a href="<?php echo esc_url( wp_lostpassword_url() ); ?>" class="lost-password"><?php esc_html_e( 'Lost password ?', 'xstore' ); ?></a>
+
+                    <p>
+                        <label class="woocommerce-form__label woocommerce-form__label-for-checkbox inline">
+                            <input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever" /> <span><?php esc_html_e( 'Remember Me', 'xstore' ); ?></span>
+                        </label>
+                    </p>
+
+                    <p class="login-submit">
+						<?php wp_nonce_field( 'woocommerce-login', 'woocommerce-login-nonce' ); ?>
+                        <button type="submit" class="woocommerce-Button button" name="login" value="<?php esc_attr_e( 'Log in', 'xstore' ); ?>"><?php esc_html_e( 'Log in', 'xstore' ); ?></button>
+                    </p>
+					<?php if ( get_option( 'woocommerce_enable_myaccount_registration' ) === 'yes' ): ?>
+                        <p class="text-center"><?php esc_html_e('New client', 'xstore');?> <a href="<?php echo $login_link; ?>" class="register-link"><?php esc_html_e('Register ?', 'xstore'); ?></a></p>
+					<?php endif; ?>
+
+					<?php do_action( 'woocommerce_login_form_end' ); ?>
+
+                </form>
+
+				<?php $login_form = ob_get_clean(); }
+			else {
+				$login_form = wp_login_form(
+					array(
+						'echo' => false,
+						'label_username' => esc_html__( 'Username or email address *', 'xstore' ),
+						'label_password' => esc_html__( 'Password *', 'xstore' )
+					)
+				);
+			}
+		} else {
+			$login_form = '';
+		}
+		$link = array(
+			'class' => 'login-link' . $class,
+			'link_class' => '',
+			'href' => $login_link,
+			'title' => $login_text,
+			'submenu' => '<div class="menu-main-container">' . $login_form . '</div>'
+		);
+
+		$class .= ' login-link';
+	}
+
+	if ( $echo ) {
+		$out = '';
+		$out .= sprintf(
+			'<%1$s class="%2$s"><a href="%3$s" class="%4$s">%5$s</a>%6$s</%1$s>',
+			( etheme_get_option( 'top_links') == 'menu' ) ? 'li' : 'div',
+			$class,
+			$link['href'],
+			$link['link_class'],
+			$link['title'],
+			$link['submenu']
+		);
+		if ( $echo === 'get' ) {
+			return $out;
+		} else {
+			echo $out;
+		}
+	} else {
+		return $link;
+	}
+}
+
 
 function etheme_ajax_search_action() {
 	global $woocommerce, $wpdb, $wp_query, $product;
