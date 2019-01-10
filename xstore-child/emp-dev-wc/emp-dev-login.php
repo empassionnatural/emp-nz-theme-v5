@@ -123,6 +123,9 @@ function login_form($atts) {
 add_shortcode('login_form', 'login_form');
 
 function product_form($atts) {
+
+    $bloglink = get_bloginfo('url');
+
     $html = '<div id="da-thumbs" class="da-thumbs">';
 
     $html .= '<div class="box">';
@@ -239,68 +242,18 @@ add_shortcode( 'if_login', 'if_login' );
 
 remove_action('woocommerce_myaccount_coupons', 'coupons');
 
-function get_all_prod(){
-    // Get publish products.
-    $args = array(
-        'status' => 'publish',
-        'limit' => 100,
-        'page'  => 2,
-    );
-    $products = wc_get_products( $args );
-    print_r($products);
-    echo count($products);
-    echo "<br>";
-    echo sizeof($products);
-}
-add_shortcode( 'get_all_prod', 'get_all_prod' );
+//function get_all_prod(){
+//    // Get publish products.
+//    $args = array(
+//        'status' => 'publish',
+//        'limit' => 100,
+//        'page'  => 2,
+//    );
+//    $products = wc_get_products( $args );
+//    print_r($products);
+//    echo count($products);
+//    echo "<br>";
+//    echo sizeof($products);
+//}
+//add_shortcode( 'get_all_prod', 'get_all_prod' );
 
-add_action('woocommerce_after_shop_loop_item_title', 'empdev_add_category_loop_item' , 3 );
-function empdev_add_category_loop_item()
-{
-    global $product;
-
-    echo wc_get_product_category_list( $product->get_id(), ', ', '<span class="posted_in">' . _n( count( $product->get_category_ids() ) ) . ' ', '</span>' );
-}
-
-add_action('woocommerce_after_shop_loop_item_title', 'empdev_add_star_rating' , 4 );
-function empdev_add_star_rating()
-{
-
-    global $woocommerce, $product;
-    $average = $product->get_average_rating();
-
-    echo '<div class="star-rating"><span style="width:'.( ( $average / 5 ) * 100 ).'%"><strong itemprop="ratingValue" class="rating">'.$average.'</strong> '.__( 'out of 5', 'woocommerce' ).'</span></div>';
-
-}
-
-add_action( 'woocommerce_after_shop_loop_item_title', 'empdev_after_shop_loop_item' , 15 );
-function empdev_after_shop_loop_item() {
-    global $post , $product;
-    $stock = get_post_meta( $post->ID, '_stock', true );
-    if( $product->is_in_stock() ) {
-
-        echo "<span class='i-stock'>In Stock</span>";
-
-    } else {
-        echo "<span class='o-stock' style='color:#f7931e;'>Out of Stock</span>";
-    }
-}
-add_action( 'woocommerce_after_shop_loop_item_title', 'quick_view_after_shop_loop_item' , 18 );
-function quick_view_after_shop_loop_item() {
-    global $post;
-    echo "<span class='show-quickly' data-prodid=".$post->ID."></span>";
-}
-function empdev_quick_view_outofstock() {
-    global $post;
-    $stock = get_post_meta( $post->ID, '_stock', true );
-    if( $stock <= 0 ) {
-        echo "<div class='qv-out-of-stock'><span class='stock' style='color:#f7931e;'>Out of Stock</span></div>";
-    }
-
-}
-//----------------------------------------------------------------
-
-add_action( 'woocommerce_after_single_product_summary', 'footer_single_produst' , 10);
-function footer_single_produst(){
-    echo "<h1>Product Footer</h1>";
-}
