@@ -224,7 +224,7 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 			$cart = WC()->cart->get_cart();
 
 
-			var_dump(trim( get_post_meta( $cart_item['product_id'], '_empdev_product_upsell_price', true ) ) );
+			//var_dump(trim( get_post_meta( $cart_item['product_id'], '_empdev_product_upsell_price', true ) ) );
 
 			return $cart_item;
 		}
