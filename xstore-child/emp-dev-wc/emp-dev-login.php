@@ -5,6 +5,7 @@
  * Date: 30/07/2018
  * Time: 9:11 AM
  */
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 function my_account_login( $atts ) {
     $html  = '<div id="login-section">';
