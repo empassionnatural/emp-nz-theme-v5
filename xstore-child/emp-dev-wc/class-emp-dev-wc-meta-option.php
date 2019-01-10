@@ -141,7 +141,8 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 
 			if ( $new_customers_val != $new_customers_val_update ) {
 
-				update_post_meta( $post_id, '_empdev_limit_new_customers', $new_customers_val_update );
+				//update_post_meta( $post_id, '_empdev_limit_new_customers', $new_customers_val_update );
+				$this->create_post_option_array_value( $new_customers_val_update, $post_id, '_empdev_limit_new_customers', 'empdev_limit_new_customers_ids' );
 
 			}
 
