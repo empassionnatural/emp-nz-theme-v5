@@ -1,5 +1,5 @@
 /*
- Theme Name:   Xstore Child
+ Theme Name:   Xstore Child v5
  Theme URI:    http://8theme.com/
  Description:  XStore Child Theme
  Author:       8theme
@@ -56,7 +56,7 @@
   margin-top: -50px;
   margin-left: -200px;
   position: relative;
-  background:url('your_full_image_link') no-repeat center center;
+ /* background:url('your_full_image_link') no-repeat center center;*/
   background-size:contain;
   -webkit-transform: rotateZ(0deg) !important;
   -ms-transform: rotate(0deg) !important;
