@@ -6,6 +6,7 @@
  * Date: 8/13/2018
  * Time: 1:43 PM
  */
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
 	class EMP_Coupon_Extension {

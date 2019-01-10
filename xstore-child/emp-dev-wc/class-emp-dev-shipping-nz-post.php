@@ -6,6 +6,7 @@
  * Date: 6/19/2018
  * Time: 11:29 AM
  */
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
 	function nz_post_po_box_method_init() {

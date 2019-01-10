@@ -1,13 +1,4 @@
 <?php
-/*
-Plugin Name: Hotel Price
-Plugin URI: https://metabox.io
-Description: A quick demo for Meta Box
-Version: 1.0
-Author: MetaBox.io
-Author URI: https://metabox.io
-License: GPL2
-*/
 
 add_filter( 'rwmb_meta_boxes', 'prefix_register_meta_boxes' );
 function prefix_register_meta_boxes( $meta_boxes ) {

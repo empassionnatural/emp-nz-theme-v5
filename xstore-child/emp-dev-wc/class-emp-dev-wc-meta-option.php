@@ -6,6 +6,8 @@
  * Date: 8/27/2018
  * Time: 11:38 AM
  */
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
 	class EMPDEV_WC_Meta_Option {
 
