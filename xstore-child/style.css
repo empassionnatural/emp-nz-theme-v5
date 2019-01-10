@@ -1,0 +1,64 @@
+/*
+ Theme Name:   Xstore Child
+ Theme URI:    http://8theme.com/
+ Description:  XStore Child Theme
+ Author:       8theme
+ Author URI:   http://8theme.com
+ Template:     xstore
+ Version:      1.1.1
+ Text Domain:  xstore-child
+*/
+
+.menu li.menu-item-has-children:before {
+    content: "\f107";
+    font-family: FontAwesome;
+    position: relative;
+    top: 15px;
+    left: -5px;
+    color: #000;
+    font-weight: 600;
+}
+/*Fix select flag dropdown*/
+.top-bar{
+    padding: 4px 0;
+}
+.select-country{
+    position: relative;
+    line-height: 0;
+}
+.switch-country{
+    line-height: 0;
+    float: left;
+}
+.select-country.bootstrap-select .dropdown-toggle:focus{
+    outline: none !important;
+}
+
+.shopping-container.ico-design-2 .cart-bag:before, .et_cart-type-2 .footer-product .button:before, .et_cart-type-2 .single_add_to_cart_button:before{
+    font-size: 32px;
+}
+.shopping-container.ico-design-2 .cart-bag .badge-number{
+    font-size: 12px;
+    min-width: 20px;
+    min-height: 20px;
+}
+.flex{
+    display: flex;
+}
+.tm-folding-cube .tm-cube {
+  display:none!important;
+}
+.tm-folding-cube {
+  width: 400px;
+  height: 100px;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -200px;
+  position: relative;
+  background:url('your_full_image_link') no-repeat center center;
+  background-size:contain;
+  -webkit-transform: rotateZ(0deg) !important;
+  -ms-transform: rotate(0deg) !important;
+  transform: rotateZ(0deg) !important;
+}

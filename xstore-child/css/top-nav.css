@@ -1,0 +1,78 @@
+.header-logo img {
+  max-width: 180px;
+}
+.navbar {
+  padding: 15px 0 !important;
+}
+.fixed-header {
+  background: rgba(255, 255, 255, 0.5);
+}
+.nav-sublist-dropdown {
+  margin-top: 23px;
+}
+.menu-wrapper .menu > li:hover .nav-sublist-dropdown {
+  top: 38px;
+}
+.menu li.menu-item-has-children:before {
+  content: "\f107";
+  font-family: FontAwesome;
+  position: relative;
+  top: 15px;
+  left: -5px;
+  color: #000;
+  font-weight: 600;
+}
+.nav-sublist-dropdown ul li:before {
+  display: none;
+}
+.nav-sublist-dropdown:before {
+  height: 30px;
+  top: -30px;
+}
+.menu li.menu-item-has-children:before {
+  position: relative;
+  top: 10px;
+  left: -5px;
+}
+.menu-wrapper .menu > li > a {
+  padding: 0.77em 1.2em;
+}
+.menu-wrapper .menu > li.current-menu-item > a:after,
+.header-color-dark .menu-wrapper .menu > li > a:hover:after {
+  display: none;
+}
+.header-xstore .navbar-header {
+  width: 7% !important;
+}
+.btn.btn-account {
+  background: white;
+  border-radius: 5px;
+  color: #333333 !important;
+}
+.account-container .dropdown-menu > li > a {
+  padding: 7px 20px;
+}
+/*Ajax Search*/
+#rf-search-box {
+  width: 262px !important;
+}
+.rf-search-container {
+  border-top: 2px solid #DCDEE0 !important;
+  margin-top: 2px !important;
+}
+.ajax-results {
+  border-left: 1px solid #e6e6e6;
+}
+.header-search.act-default .search-btn {
+  display: none;
+}
+.shopping-container.ico-design-2 .cart-bag .badge-number {
+  background-color: #D89B31 !important;
+}
+.mobile-menu-wrapper .header-search.act-default button[type="submit"] {
+  background: transparent !important;
+  border: none;
+}
+.header-search.act-default [role=searchform] .btn:hover {
+  background-color: #f8f8f8 !important;
+}

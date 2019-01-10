@@ -1,0 +1,184 @@
+/*User account*/
+.woocommerce-MyAccount-navigation li.is-active a {
+  color: #1e1e1e;
+  font-weight: bold;
+}
+/*woocommerce*/
+.price + a.add_to_cart_button {
+  margin-top: 1.0714em;
+}
+.button.product_type_simple.ajax_add_to_cart,
+.button.product_type_subscription.add_to_cart_button,
+.button.product_type_simple.add_to_cart_button {
+  border-radius: 0;
+  font-weight: 500;
+  line-height: 15px;
+  padding: 8px 20px;
+  margin-bottom: 0;
+  text-align: center;
+  cursor: pointer;
+  vertical-align: middle;
+  font: 11px/15px 'Raleway', sans-serif;
+  border: 2px solid #252525;
+}
+.button.product_type_simple.ajax_add_to_cart:hover,
+.button.product_type_subscription.add_to_cart_button:hover,
+.button.product_type_simple.add_to_cart_button:hover {
+  color: white;
+  text-transform: uppercase;
+  background-color: #7AA802;
+}
+.add_to_cart_button.ajax_add_to_cart.single_add_to_cart_button.button.alt {
+  vertical-align: top;
+}
+.quantity.buttons_added {
+  height: 50%;
+}
+input.input-text.qty.text {
+  height: 3.42rem;
+}
+.quantity.buttons_added .plus,
+.quantity.buttons_added .minus {
+  height: 50%;
+}
+.active.et-opened .tab-title.opened {
+  color: #7AA802;
+}
+a.checkout-button.button.alt.wc-forward,
+a.button.btn-checkout.wc-forward,
+#place_order.button.alt {
+  background-color: #7aa802;
+  border: 1px solid #111;
+}
+.price ins .amount {
+  color: black !important;
+}
+.button.product_type_simple.add_to_cart_button {
+  font-family: 'Lato', Arial, Tahoma sans-serif;
+}
+.payment_methods label[for="payment_method_stripe"] img {
+  width: 40px;
+}
+#place_order,
+.btn-checkout,
+checkout-button {
+  display: block !important;
+}
+.label-product > div {
+  margin-left: 14px;
+}
+.woocommerce-price-suffix {
+  margin-bottom: 30px;
+}
+.product-information .cart button {
+  background-color: #79aa00;
+}
+.product-information .cart button {
+  font-size: 18px !important;
+}
+.page-heading a,
+.page-heading .woocommerce-breadcrumb,
+.page-heading #breadcrumb {
+  color: #1a82e0 !important;
+}
+.tabs.accordion .tab-title {
+  font-size: 19px !important;
+  font-weight: 900 !important;
+}
+.reply-title .comment-reply-title {
+  color: #9d1bb2 !important;
+}
+ul.page-numbers {
+  list-style: none;
+  text-align: center;
+  padding: 1em 0;
+}
+ul.page-numbers li {
+  display: inline-block;
+  list-style: none;
+}
+.products-grid .product-title {
+  margin-top: 10px;
+}
+.products-grid .product-title {
+  font-size: 16px;
+}
+#place_order,
+.btn-checkout,
+checkout-button {
+  display: block !important;
+}
+/*wholesale pricing*/
+.price + form.cart {
+  margin-top: 1em;
+}
+.product-information-inner .woocommerce-price-suffix {
+  float: left;
+}
+.shipping.recurring-total {
+  display: none;
+}
+.single-product .tabs {
+  margin-bottom: 0;
+}
+.cart-subtotal-wholesale .wholesale-amount {
+  font-size: 20px;
+  font-weight: bold;
+}
+.cart-subtotal-wholesale .orginal-amount {
+  padding-left: 5px;
+  font-size: 18px;
+}
+.off-wholesale .wholesale-amount,
+.on-wholesale .orginal-amount {
+  text-decoration: line-through;
+}
+.cart_totals th {
+  width: 160px;
+}
+.cart-subtotal-wholesale th,
+.cart-subtotal-wholesale td {
+  border-top: 2px solid #1e1e1e;
+}
+.cart-item-details .variation {
+  margin-bottom: 0;
+}
+.wholesale-shipping p {
+  font-size: 0.86rem;
+  text-transform: uppercase;
+  color: #1e1e1e;
+  font-weight: bold;
+}
+.stock {
+  color: #777;
+  text-transform: capitalize;
+}
+.product-information .price {
+  margin-bottom: 10px;
+}
+.wholesale_customer .product-information .price {
+  margin-bottom: 0;
+}
+.product-information .woocommerce-price-suffix {
+  margin-bottom: 5px;
+}
+.product-information .wholesale_price_container {
+  margin-top: -10px;
+}
+.remove-item-mobile {
+  display: none !important;
+}
+.product-inview.content-product .price {
+  margin-bottom: 0;
+}
+.product-inview .afterpay-payment-info {
+  margin-bottom: 1.0714em;
+}
+.product-thumbnail-mobile {
+  display: none;
+  float: left;
+  width: 50px;
+}
+#product-5876 > div.row > div > div > div.col-lg-6.col-md-6.col-sm-12.product-information > div > div > form > dl {
+  display: none;
+}

@@ -1,0 +1,23 @@
+/*
+** Opacity
+*/
+/*
+** Border Radius
+*/
+/*
+** CSS3 animation
+*/
+@-webkit-keyframes rotation {
+  from {
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -o-transform: rotate(359deg);
+    -ms-transform: rotate(359deg);
+    -moz-transform: rotate(359deg);
+    -webkit-transform: rotate(359deg);
+  }
+}

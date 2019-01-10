@@ -1,0 +1,90 @@
+.page-heading.bc-type-2 .title {
+  font: 24px/24px 'Raleway', Arial, Helvetica, sans-serif !important;
+  color: #252525 !important;
+  margin: 0 auto !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+}
+.posts-slider article h2,
+.post-heading h2,
+.page-heading .title,
+.product-title,
+.product-information .title,
+.product-info-wrapper .title,
+.product-summary-center .title,
+.product-information .product_title,
+.product-info-wrapper .product_title,
+.product-summary-center .product_title {
+  text-transform: initial;
+}
+.page-content,
+.content-page {
+  margin-top: 0px;
+}
+.st-content {
+  background-color: #FFFEFC;
+}
+.tabs .tab-content p {
+  color: #363636 !important;
+  font-size: 16px !important;
+}
+.article-p p {
+  padding-bottom: 10px;
+  color: #333;
+}
+em {
+  color: #1e1e1e;
+}
+.mail-link {
+  color: #1a82e0;
+}
+.header-wrapper {
+  border-bottom: 3px solid #7AA802 !important;
+}
+.admin-bar .fixed-header-area.fixed-already {
+  background-color: #fef3e2;
+}
+.wpb_wrapper p {
+  font-family: 'Lato', Arial, Tahoma sans-serif;
+  font-size: 15px !important;
+  margin-bottom: 0;
+  font-weight: 300 !important;
+}
+.bundled_product_summary .details {
+  margin-bottom: -80px;
+}
+.details div p {
+  visibility: hidden;
+}
+.short-description strong {
+  font-size: 12px;
+  font-family: 'Raleway', Georgia, Helvetica, sans-serifGeorgia, Helvetica, sans-serif;
+}
+.short-description h5 strong {
+  font-family: 'Raleway', Georgia, Helvetica, sans-serifGeorgia, Helvetica, sans-serif;
+  font-weight: 500;
+}
+.container-wrapper {
+  padding-top: 15px !important;
+  padding-bottom: 15px !important;
+}
+.lost_password a {
+  color: #313131 !important;
+}
+body > div.template-container > div.template-content > div.page-wrapper > div.container.content-page > div > div > div > div.woocommerce > div > form {
+  display: block !important;
+}
+#ui-datepicker-div {
+  background: #FFF;
+  padding: 10px;
+}
+#ui-datepicker-div > div > a.ui-datepicker-next.ui-corner-all > span {
+  float: right;
+  color: #2799d5;
+}
+#ui-datepicker-div > div > a.ui-datepicker-prev.ui-corner-all > span {
+  color: #2799d5;
+}
+#call_for_credit > p:nth-child(1) {
+  float: none !important;
+}

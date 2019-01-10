@@ -1,0 +1,15 @@
+/*Footer*/
+.et-follow-buttons.buttons-size-large a:hover {
+  color: white;
+}
+.footer-bottom {
+  padding: 30px 0;
+}
+.et-follow-buttons.align-center {
+  text-align: left;
+}
+.footer .widget-title {
+  margin-bottom: 1em;
+  border-bottom: 1px solid #DDD;
+  padding-bottom: 0.5em;
+}
