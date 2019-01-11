@@ -130,10 +130,10 @@
     margin-right: auto;
 }
 .product-info-footer .feedback-content .pink-box .feedbackinfo .heart .vc_icon_element-icon.fa.fa-heart {
-    color: #fff;
+    color: #fff !important;
     font-size: 40px;
-    text-align: center;
-    margin: 29px;
+    text-align: center !important;
+    margin: 29px !important;
 }
 .product-info-footer .feedback-content .pink-box .feedbackinfo p {
     text-align: center;
@@ -193,6 +193,9 @@
     .product-info-footer .feedback-content .pink-box , .product-info-footer .feedback-content .pink-box .feedbackinfo {
         max-width: 381px;
         width: 100%;
+    }
+    .single-product-sidebar .custom-html-widget .row.products-loop .wishlist-disabled.status-publish {
+        max-width: 371px !important;
     }
 }
 @media (max-width: 375px) {
