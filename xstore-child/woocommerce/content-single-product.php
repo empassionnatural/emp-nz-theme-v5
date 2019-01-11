@@ -94,17 +94,17 @@ $etheme_global['class'] .= ' single-product';
                 <div class="single-product-footer">
                     <div class="col-lg-12 col-md-12 col-sm-12 product-footer">
                         <div class="col-lg-4 col-sm-4">
-                            <i class="icon far fa-thumbs-up"></i>
+                            <i class="icon vc_icon_element-icon fa fa-thumbs-up"></i>
                             <p class="title">Hassle Free Returns</p>
                             <p class="sub-title">30 days return policy</p>
                         </div>
                         <div class="col-lg-4 col-sm-4">
-                            <i class="icon fas fa-truck"></i>
+                            <i class="icon vc_icon_element-icon fa fa-truck"></i>
                             <p class="title">Fast Shipping</p>
                             <p class="sub-title">1 - 3 business days</p>
                         </div>
                         <div class="col-lg-4 col-sm-4">
-                            <i class="icon fas fa-shield-alt"></i>
+                            <i class="icon vc_icon_element-icon fa fa-shield"></i>
                             <p class="title">Secure Checkout</p>
                             <p class="sub-title">SSL Enabled Secure Checkout</p>
                         </div>
@@ -156,7 +156,7 @@ $etheme_global['class'] .= ' single-product';
                                 <p class="txt-from">From our last 100 customers</p>
 
                                 <div class="heart">
-                                    <i class="fas fa-heart"></i>
+                                    <i class="vc_icon_element-icon fa fa-heart"></i>
                                 </div>
 
                                 <p class="txt-percentage">96%</p>
