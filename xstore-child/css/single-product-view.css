@@ -19,6 +19,12 @@
     width: 100%;
     padding-top: 14px;
 }
+.single-product-default .product-content .product-information-inner .stock.in-stock {
+    display: none;
+}
+.single-product-default .product-content .product-information-inner .cart .stock.in-stock {
+    display: block;
+}
 .single-product-default .product-content .product-information .single-product-rating .star-rating {
     margin: 0px !important;
     line-height: 1.5 !important;

@@ -70,6 +70,8 @@ if( $new_customers_val ): ?>
 			 * @since 3.0.0.
 			 */
 
+            echo "<p class='input-quantity'>Quantity</p>";
+
 			do_action( 'woocommerce_before_add_to_cart_quantity' );
 
 			woocommerce_quantity_input( array(
@@ -83,6 +85,12 @@ if( $new_customers_val ): ?>
 			 */
 			do_action( 'woocommerce_after_add_to_cart_quantity' );
 			// }
+            $stock = get_post_meta( $post->ID, '_stock', true );
+            if( $stock > 0 ) {
+                echo wc_get_stock_html( $product );
+            } else {
+                echo "<span class='stock in-stock'>In Stock</span>";
+            }
 			?>
 
             <input type="hidden" name="add-to-cart" value="<?php echo esc_attr( $product->get_id() ); // updated for woocommerce v3.0 ?>" />
@@ -112,6 +120,8 @@ if( $new_customers_val ): ?>
 				 * @since 3.0.0.
 				 */
 
+                echo "<p class='input-quantity'>Quantity</p>";
+
 				do_action( 'woocommerce_before_add_to_cart_quantity' );
 
 	 			woocommerce_quantity_input( array(
@@ -125,6 +135,14 @@ if( $new_customers_val ): ?>
 				 */
 				do_action( 'woocommerce_after_add_to_cart_quantity' );
 	 		// }
+
+                $stock = get_post_meta( $post->ID, '_stock', true );
+                if( $stock > 0 ) {
+                    echo wc_get_stock_html( $product );
+                } else {
+                    echo "<span class='stock in-stock'>In Stock</span>";
+                }
+
 	 	?>
 
 	 	<input type="hidden" name="add-to-cart" value="<?php echo esc_attr( $product->get_id() ); // updated for woocommerce v3.0 ?>" />

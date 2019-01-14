@@ -1,3 +1,4 @@
+
 .row.products-loop {
     margin-left: 15px;
     margin-right: 15px;
@@ -89,6 +90,11 @@ div.product-image-wrapper .stock.out-of-stock {
     font-size: 13px;
     color: #888888;
     font-weight: normal;
+}
+.single-product-default .product-content .price .wholesale_price_container ins span.woocommerce-Price-amount.amount ,.single-product-default .product-content  .price span.woocommerce-Price-amount.amount {
+    font-size: 31px;
+    color: black;
+    font-weight: bold;
 }
 .text-center.product-details span.price {
     width: 100%;
@@ -313,11 +319,16 @@ p.price del.original-computed-price small.woocommerce-price-suffix {
     width: 76px;
     max-width: 77px;
 }
-.cart .input-quantity , .cart .stock.in-stock , .single-product-default .product-content .product-information-inner .stock.in-stock {
+.cart .input-quantity , .cart .stock.in-stock {
     width: 20% !important;
-    height: 45px !important;
+    height: 60px !important;
     padding-top: 10px !important;
     font-weight: bold;
+    line-height: 18px;
+    margin-bottom: 0px !important;
+}
+.product-content .out-of-stock {
+    color: #f7931e !important;
 }
 .quick-view-info .cart .stock.in-stock {
     padding-left: 10px !important;

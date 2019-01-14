@@ -15,6 +15,9 @@
   background-color: #cbcbcb;
 }
 /*top-bar highlights*/
+span.account-links {
+  width: auto !important;
+}
 #text-22.topbar-widget p,
 #text-24.topbar-widget p {
   position: relative;
