@@ -161,17 +161,17 @@ if ( etheme_get_option('quick_images') == 'slider') $class .= ' swipers-couple-w
                 <?php endif ?>
                 <div class="product-footer">
                     <div class="col-lg-4 col-sm-4">
-                        <i class="icon far fa-thumbs-up"></i>
+                        <i class="icon vc_icon_element-icon fa fa-thumbs-up"></i>
                         <p class="title">Hassle Free Returns</p>
                         <p class="sub-title">30 days return policy</p>
                     </div>
                     <div class="col-lg-4 col-sm-4">
-                        <i class="icon fas fa-truck"></i>
+                        <i class="icon vc_icon_element-icon fa fa-truck"></i>
                         <p class="title">Fast Shipping</p>
                         <p class="sub-title">1 - 3 business days</p>
                     </div>
                     <div class="col-lg-4 col-sm-4">
-                        <i class="icon fas fa-shield-alt"></i>
+                        <i class="icon vc_icon_element-icon fa fa-shield"></i>
                         <p class="title">Secure Checkout</p>
                         <p class="sub-title">SSL Enabled Secure Checkout</p>
                     </div>

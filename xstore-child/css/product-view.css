@@ -313,7 +313,7 @@ p.price del.original-computed-price small.woocommerce-price-suffix {
     width: 76px;
     max-width: 77px;
 }
-.cart .input-quantity , .cart .stock.in-stock {
+.cart .input-quantity , .cart .stock.in-stock , .single-product-default .product-content .product-information-inner .stock.in-stock {
     width: 20% !important;
     height: 45px !important;
     padding-top: 10px !important;
