@@ -88,19 +88,7 @@ jQuery(document).ready(function($){
     main_global.init();
 
 });
-// jQuery(document).click(function openTabs(evt, cityName) {
-//     var i, tabcontent, tablinks;
-//     tabcontent = document.getElementsByClassName("tabcontent");
-//     for (i = 0; i < tabcontent.length; i++) {
-//         tabcontent[i].style.display = "none";
-//     }
-//     tablinks = document.getElementsByClassName("tablinks");
-//     for (i = 0; i < tablinks.length; i++) {
-//         tablinks[i].className = tablinks[i].className.replace(" active", "");
-//     }
-//     document.getElementById(cityName).style.display = "block";
-//     evt.currentTarget.className += " active";
-// });
+
 var openTabs = function(evt, cityName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
@@ -114,16 +102,17 @@ var openTabs = function(evt, cityName) {
     document.getElementById(cityName).style.display = "block";
     evt.currentTarget.className += " active";
 };
-// $( "#openTabs" ).click(function(evt, cityName) {
-//     var i, tabcontent, tablinks;
-//     tabcontent = document.getElementsByClassName("tabcontent");
-//     for (i = 0; i < tabcontent.length; i++) {
-//         tabcontent[i].style.display = "none";
-//     }
-//     tablinks = document.getElementsByClassName("tablinks");
-//     for (i = 0; i < tablinks.length; i++) {
-//         tablinks[i].className = tablinks[i].className.replace(" active", "");
-//     }
-//     document.getElementById(cityName).style.display = "block";
-//     evt.currentTarget.className += " active";
-// });
+
+var openAccordion = function(evt , id1 , id2) {
+    var y = document.getElementById(id1);
+    var x = document.getElementById(id2);
+    if (x.className.indexOf("wp-show") == -1) {
+        y.className += " active";
+        x.className += " wp-show";
+        x.style.maxHeight = x.scrollHeight  + "px";
+    } else {
+        y.className = y.className.replace(" active","")
+        x.className = x.className.replace(" wp-show", "");
+        x.style.maxHeight = null;
+    }
+}

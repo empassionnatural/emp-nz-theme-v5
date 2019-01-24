@@ -256,3 +256,9 @@ function empdev_quick_view_outofstock() {
         echo "<div class='qv-out-of-stock'><span class='stock' style='color:#f7931e;'>Out of Stock</span></div>";
     }
 }
+
+function add_something() {
+    echo "";
+}
+
+add_action('woocommerce_checkout_order_review','add_something');

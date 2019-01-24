@@ -29,7 +29,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<?php do_action( 'woocommerce_before_cart_totals' ); ?>
 
-	<h2><?php _e( 'Cart totals', 'woocommerce' ); ?></h2>
+	<h3><?php _e( 'Order Summary', 'woocommerce' ); ?></h3>
 
 	<table cellspacing="0" class="shop_table shop_table_responsive">
 
@@ -101,10 +101,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	</table>
 
-	<div class="wc-proceed-to-checkout">
-		<?php do_action( 'woocommerce_proceed_to_checkout' ); ?>
-	</div>
-
+    <div class="car_totals-footer">
+        <div class="col-sm-6 shopping-btn">
+            <?php if ( wc_get_page_id( 'shop' ) > 0 ) : ?>
+                <a class="return-shop button alt" href="<?php echo get_permalink(wc_get_page_id('shop')); ?>"><i class="et-icon et-left-arrow"></i><?php esc_html_e('Continue Shopping', 'xstore') ?></a>
+            <?php endif; ?>
+        </div>
+        <div class="col-sm-6 wc-proceed-to-checkout">
+            <?php do_action( 'woocommerce_proceed_to_checkout' ); ?>
+        </div>
+    </div>
 	<?php do_action( 'woocommerce_after_cart_totals' ); ?>
 
 </div>

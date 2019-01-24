@@ -26,11 +26,18 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 endif;
 
-do_action( 'woocommerce_before_cart' ); ?>
+
+
+do_action( 'woocommerce_before_cart' );
+
+
+
+?>
 
 <div class="row">
-	<div class="col-md-7"> 
 
+	<div class="col-md-12">
+        <h2>My Cart</h2>
 		<form class="woocommerce-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
 
 		<?php do_action( 'woocommerce_before_cart_table' ); ?>
@@ -79,7 +86,7 @@ do_action( 'woocommerce_before_cart' ); ?>
                                     } else {
                                     	echo apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s" class="product-title">%s</a>', esc_url( $product_permalink ) , $_product->get_name() ), $cart_item, $cart_item_key );
                                     }
-                                   
+
 		                            // Meta data
 									//if (  etheme_get_option( 'enable_swatch' ) && class_exists( 'St_Woo_Swatches_Base' ) ) {
 									//	$Swatches = new St_Woo_Swatches_Base();
@@ -92,16 +99,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 		                    if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) )
 		                         	echo wp_kses_post( apply_filters( 'woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'xstore' ) . '</p>', $product_id ) );
 		                            ?>
-		                            <?php
-		                            	echo apply_filters( 'woocommerce_cart_item_remove_link',
-		                            		sprintf(
-				                            	'<a href="%s" class="remove-item text-underline" title="%s">%s</a>',
-				                            	esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
-				                            	esc_html__( 'Remove this item', 'xstore' ),
-				                            	esc_html__('Remove', 'xstore')
-			                            	),
-			                            $cart_item_key );
-		                            ?>
+
 		                            <span class="mobile-price">
 		                            	<?php
 											echo (int) $cart_item['quantity'] . ' x ' . apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key );
@@ -135,9 +133,23 @@ do_action( 'woocommerce_before_cart' ); ?>
 							</td>
 
 							<td class="product-subtotal" data-title="<?php esc_attr_e( 'Total', 'xstore' ); ?>">
-								<?php
+								<div class="col-sm-12 total-price">
+                                <?php
 									echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key );
 								?>
+                                </div>
+                                <div class="col-sm-12">
+                                <?php
+                                echo apply_filters( 'woocommerce_cart_item_remove_link',
+                                    sprintf(
+                                        '<a href="%s" class="remove-item text-underline" title="%s">%s</a>',
+                                        esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
+                                        esc_html__( 'Remove this item', 'xstore' ),
+                                        esc_html__('Remove Item', 'xstore')
+                                    ),
+                                    $cart_item_key );
+                                ?>
+                                </div>
 							</td>
 						</tr>
 						<?php
@@ -155,27 +167,9 @@ do_action( 'woocommerce_before_cart' ); ?>
 		<?php do_action( 'woocommerce_after_cart_table' ); ?>
 
 				<div class="actions clearfix">
-		<?php $cols = 12; ?>
-		<?php if ( wc_coupons_enabled() ) : $cols = 6; ?>
-			<div class="col-md-<?php echo esc_attr($cols); ?> col-sm-<?php echo esc_attr($cols); ?> text-left mob-center">
-				<form class="checkout_coupon" method="post">
-				<a href="#" class="et-open to_open-coupon"><i class="et-icon et-coupon"></i><?php esc_html_e('Enter your promotion code', 'xstore'); ?></a>
-					<div class="coupon" style="display: none;">
 
-						<input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_html_e( 'Coupon code', 'xstore' ); ?>" />
-						<!-- <input type="submit" class="btn" name="apply_coupon" value="&#9166;" /> -->
-						<input type="submit" class="btn" name="apply_coupon" value="<?php esc_attr_e('OK', 'xstore'); ?>" />
-
-						<?php do_action('woocommerce_cart_coupon'); ?>
-
-					</div>
-				</form>
-			</div>
-			<?php endif; ?>
 			<div class="col-md-<?php echo esc_attr($cols); ?> col-sm-<?php echo esc_attr($cols); ?> mob-center">
-				<?php if ( wc_get_page_id( 'shop' ) > 0 ) : ?>
-					<a class="return-shop" href="<?php echo get_permalink(wc_get_page_id('shop')); ?>"><i class="et-icon et-left-arrow"></i><?php esc_html_e('Return to shop', 'xstore') ?></a>
-				<?php endif; ?>
+
 				<button type="submit" class="btn gray" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'xstore' ); ?>"><?php esc_html_e( 'Update cart', 'xstore' ); ?></button>
 				<?php wp_nonce_field( 'woocommerce-cart' ); ?>
 				<?php do_action( 'woocommerce_cart_actions' ); ?>
@@ -184,13 +178,31 @@ do_action( 'woocommerce_before_cart' ); ?>
 		
 		</form>
 	</div>
-	<div class="col-md-5 cart-order-details">
+
+    <div class="col-md-6 add-coupon-code">
+        <?php if ( wc_coupons_enabled() ) : $cols = 12; ?>
+            <div class="col-md-<?php echo esc_attr($cols); ?> col-sm-<?php echo esc_attr($cols); ?> text-left mob-center">
+                <form class="checkout_coupon" method="post">
+                    <h3 class="coupon-title"><?php esc_html_e('Apply Promo Code or Gift Coupon', 'xstore'); ?></h3>
+                    <div class="coupon" style="display: block;">
+
+                        <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_html_e( 'Coupon code', 'xstore' ); ?>" />
+                        <!-- <input type="submit" class="btn" name="apply_coupon" value="&#9166;" /> -->
+                        <?php do_action('woocommerce_cart_coupon'); ?>
+                    </div>
+                    <input type="submit" class="btn" name="apply_coupon" value="<?php esc_attr_e('Apply', 'xstore'); ?>" />
+                </form>
+            </div>
+        <?php endif; ?>
+    </div>
+	<div class="col-md-6 cart-order-details">
 		<div class="cart-collaterals">
 			<?php do_action( 'woocommerce_cart_collaterals' ); ?>
 		</div>
 		<?php  if((!function_exists('dynamic_sidebar') || !dynamic_sidebar('cart-area'))): ?>
         <?php endif; ?>
 	</div>
+
 </div>
 <!-- end row -->
 
