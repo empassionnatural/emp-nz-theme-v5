@@ -42,126 +42,139 @@ do_action( 'woocommerce_before_cart' );
 
 		<?php do_action( 'woocommerce_before_cart_table' ); ?>
 		<div class="table-responsive">
-		<table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
-			<thead>
-				<tr>
-					<th class="product-details" colspan="2"><?php esc_html_e( 'Product', 'xstore' ); ?></th>
-					<th class="product-price"><?php esc_html_e( 'Price', 'xstore' ); ?></th>
-					<th class="product-quantity"><?php esc_html_e( 'Quantity', 'xstore' ); ?></th>
-					<th class="product-subtotal" colspan="2"><?php esc_html_e( 'Total', 'xstore' ); ?></th>
-				</tr>
-			</thead>
-			<tbody>
-				<?php do_action( 'woocommerce_before_cart_contents' ); ?>
+            <table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
+                <thead>
+                <tr>
+                    <th class="product-name">&nbsp;</th>
+                    <th class="product-details"><?php esc_html_e( 'Product', 'xstore' ); ?></th>
+                    <th class="product-price"><?php esc_html_e( 'Price', 'xstore' ); ?></th>
+                    <th class="product-quantity"><?php esc_html_e( 'Quantity', 'xstore' ); ?></th>
+                    <th class="product-subtotal"><?php esc_html_e( 'Total', 'xstore' ); ?></th>
+                    <th class="product-remove">&nbsp;</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php do_action( 'woocommerce_before_cart_contents' ); ?>
 
-				<?php
-				foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
-					$_product     = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
-					$product_id   = apply_filters( 'woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key );
+                <?php
+                foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
+                    $_product     = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
+                    $product_id   = apply_filters( 'woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key );
 
-					if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
-						$product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
-						?>
-						<tr class="woocommerce-cart-form__cart-item <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
+                    if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
+                        $product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
+                        ?>
+                        <tr class="woocommerce-cart-form__cart-item <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
 
 
-							<td class="product-name" data-title="<?php esc_attr_e( 'Product', 'xstore' ); ?>">
-		                        <div class="product-thumbnail">
-		                            <?php
-		                                $thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
+                            <td class="product-name" data-title="<?php esc_attr_e( 'Product', 'xstore' ); ?>">
+                                <div class="product-thumbnail">
+                                    <?php
+                                    $thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image('medium'), $cart_item, $cart_item_key );
 
-		                                if ( ! $_product->is_visible() || ! $product_permalink){
-		                                    echo wp_kses_post( $thumbnail );
-		                                } else {
-		                                    printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $thumbnail );
-		                                }
-		                            ?>
-		                        </div>
-							</td>
-							<td class="product-details">
-		                        <div class="cart-item-details">
-		                            <?php
-		                            if ( ! $_product->is_visible() || ! $product_permalink  ){
-                                    	echo apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key );
-                                    } else {
-                                    	echo apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s" class="product-title">%s</a>', esc_url( $product_permalink ) , $_product->get_name() ), $cart_item, $cart_item_key );
-                                    }
+                                    if ( ! $_product->is_visible() || ! $product_permalink)
+                                        echo $thumbnail;
+                                    else
+                                        printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $thumbnail );
 
-		                            // Meta data
-									//if (  etheme_get_option( 'enable_swatch' ) && class_exists( 'St_Woo_Swatches_Base' ) ) {
-									//	$Swatches = new St_Woo_Swatches_Base();
-									//	echo //$Swatches->st_wc_get_formatted_cart_item_data( $cart_item );
-									//} else {
-										echo wc_get_formatted_cart_item_data( $cart_item );
-									//}
-
-		                    // Backorder notification
-		                    if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) )
-		                         	echo wp_kses_post( apply_filters( 'woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'xstore' ) . '</p>', $product_id ) );
-		                            ?>
-
-		                            <span class="mobile-price">
-		                            	<?php
-											echo (int) $cart_item['quantity'] . ' x ' . apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key );
-										?>
-		                            </span>
-		                        </div>
-							</td>
-
-							<td class="product-price" data-title="<?php esc_attr_e( 'Price', 'xstore' ); ?>">
-								<?php
-									echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key );
-								?>
-							</td>
-
-							<td class="product-quantity" data-title="<?php esc_attr_e( 'Quantity', 'xstore' ); ?>">
-								<?php
-									if ( $_product->is_sold_individually() ) {
-										$product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
-									} else {
-										$product_quantity = woocommerce_quantity_input( array(
-											'input_name'  => "cart[{$cart_item_key}][qty]",
-											'input_value' => $cart_item['quantity'],
-											'max_value'   => $_product->get_max_purchase_quantity(),
-											'min_value'   => '0',
-											'product_name'  => $_product->get_name(),
-										), $_product, false );
-									}
-
-									echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item );
-								?>
-							</td>
-
-							<td class="product-subtotal" data-title="<?php esc_attr_e( 'Total', 'xstore' ); ?>">
-								<div class="col-sm-12 total-price">
-                                <?php
-									echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key );
-								?>
+                                    ?>
                                 </div>
-                                <div class="col-sm-12">
+                            </td>
+                            <td class="product-details">
+                                <div class="product-thumbnail-mobile">
+                                    <?php
+                                    $thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image('medium'), $cart_item, $cart_item_key );
+
+                                    if ( ! $_product->is_visible() || ! $product_permalink)
+                                        echo $thumbnail;
+                                    else
+                                        printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $thumbnail );
+
+                                    ?>
+                                </div>
+                                <div class="cart-item-details">
+                                    <div class="item-details-product-name">
+                                        <?php
+                                        if ( ! $_product->is_visible() || ! $product_permalink  )
+                                            echo apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key );
+                                        else
+                                            echo apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s</a>', esc_url( $product_permalink ) , $_product->get_name() ), $cart_item, $cart_item_key );
+
+                                        // Meta data
+                                        echo wc_get_formatted_cart_item_data( $cart_item );
+
+                                        // Backorder notification
+                                        if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) )
+                                            echo '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'xstore' ) . '</p>';
+                                        ?>
+                                    </div>
+                                    <span class="mobile-price">
+                                        <?php
+                                        echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key );
+                                        ?>
+                                    </span>
+                                    <?php
+                                    //display in stock product quantity
+                                    $stock_available = $_product->get_availability();
+                                    $availability = $stock_available['availability'];
+                                    $availability = preg_replace( '/(\d+)/', '<span class="stock-count">($1)</span>', $availability );
+                                    echo '<span class="stock '. esc_attr( $stock_available['class'] ) .' "> '. wp_kses_post( $availability ).' </span>';
+                                    ?>
+                                </div>
+                            </td>
+
+                            <td class="product-price" data-title="<?php esc_attr_e( 'Price', 'xstore' ); ?>">
                                 <?php
-                                echo apply_filters( 'woocommerce_cart_item_remove_link',
-                                    sprintf(
-                                        '<a href="%s" class="remove-item text-underline" title="%s">%s</a>',
-                                        esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
-                                        esc_html__( 'Remove this item', 'xstore' ),
-                                        esc_html__('Remove Item', 'xstore')
-                                    ),
-                                    $cart_item_key );
+                                echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key );
                                 ?>
-                                </div>
-							</td>
-						</tr>
-						<?php
-					}
-				}
+                            </td>
 
-				do_action( 'woocommerce_cart_contents' );
-				?>
+                            <td class="product-quantity" data-title="<?php esc_attr_e( 'Quantity', 'xstore' ); ?>">
+                                <?php
+                                if ( $_product->is_sold_individually() ) {
+                                    $product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
+                                } else {
+                                    $product_quantity = woocommerce_quantity_input( array(
+                                        'input_name'  => "cart[{$cart_item_key}][qty]",
+                                        'input_value' => $cart_item['quantity'],
+                                        'max_value'   => $_product->get_max_purchase_quantity(),
+                                        'min_value'   => '0',
+                                        'product_name'  => $_product->get_name(),
+                                    ), $_product, false );
+                                }
 
-				<?php do_action( 'woocommerce_after_cart_contents' ); ?>
-			</tbody>
-		</table>
+                                echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item );
+
+                                echo apply_filters( 'woocommerce_cart_item_remove_link_mobile', sprintf( '<a href="%s" class="remove-item-mobile" title="%s">Remove</a>', esc_url( wc_get_cart_remove_url( $cart_item_key ) ), __( 'Remove this item', 'xstore' ) ), $cart_item_key );
+                                ?>
+
+
+
+                            </td>
+
+                            <td class="product-subtotal" data-title="<?php esc_attr_e( 'Total', 'xstore' ); ?>">
+                                <?php
+                                echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key );
+                                ?>
+                            </td>
+                            <td class="product-remove">
+
+                                <?php
+                                echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf( '<a href="%s" class="btn remove-item" title="%s">X</a>', esc_url( wc_get_cart_remove_url( $cart_item_key ) ), __( 'Remove this item', 'xstore' ) ), $cart_item_key );
+                                ?>
+                            </td>
+                        </tr>
+                        <?php
+                    }
+                }
+
+                do_action( 'woocommerce_cart_contents' );
+                ?>
+
+                <?php do_action( 'woocommerce_after_cart_contents' ); ?>
+                </tbody>
+            </table>
+
 		</div>
 
 		<?php do_action( 'woocommerce_after_cart_table' ); ?>

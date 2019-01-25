@@ -35,8 +35,9 @@ if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_us
 
 // filter hook for include new pages inside the payment method
 $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', wc_get_checkout_url() ); ?>
-    <div class="left-form col-md-5">
 
+    <div class="row left-form col-md-5">
+        <div class="container">
         <div class="order-review">
             <h3 class="header-title step-title"><span><?php esc_html_e( 'Order Summary', 'xstore' ); ?></span></h3>
             <?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
@@ -145,10 +146,11 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', wc_get_checko
             do_action( 'woocommerce_before_checkout_form', $checkout );
             ?>
         </div>
-
+        </div>
     </div>
-    <div class="right-form col-md-7">
 
+    <div class="row right-form col-md-7">
+        <div class="container">
     <?php if ( wc_ship_to_billing_address_only() && WC()->cart->needs_shipping() ) : ?>
 
         <h3 class="header-title step-title"><span><?php esc_html_e( 'Billing &amp; Shipping', 'xstore' ); ?></span></h3>
@@ -227,5 +229,7 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', wc_get_checko
         </div>
 
     </form>
+        </div>
     </div>
+
 <?php do_action( 'woocommerce_after_checkout_form', $checkout ); ?>
