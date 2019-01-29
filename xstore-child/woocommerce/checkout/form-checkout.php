@@ -26,7 +26,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
     <?php wc_print_notices(); ?>
 
 <?php
-
+do_action( 'woocommerce_before_checkout_form', $checkout );
+?>
+<?php
 // If checkout registration is disabled and not logged in, the user cannot checkout
 if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_user_logged_in() ) {
 	echo esc_html( apply_filters( 'woocommerce_checkout_must_be_logged_in_message', __( 'You must be logged in to checkout.', 'xstore' ) ) );
@@ -38,7 +40,9 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', wc_get_checko
 
     <div class="row left-form col-md-5">
         <div class="container">
-        <div class="order-review">
+
+
+            <div class="order-review">
             <h3 class="header-title step-title"><span><?php esc_html_e( 'Order Summary', 'xstore' ); ?></span></h3>
             <?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
 
@@ -141,11 +145,25 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', wc_get_checko
             <?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
         </div>
 
-        <div class="before-checkout-form">
-            <?php
-            do_action( 'woocommerce_before_checkout_form', $checkout );
-            ?>
-        </div>
+            <div class="before-checkout-form">
+                <div class="add-coupon-code">
+                    <?php if ( wc_coupons_enabled() ) : $cols = 12; ?>
+                        <div class="col-md-<?php echo esc_attr($cols); ?> col-sm-<?php echo esc_attr($cols); ?> text-left mob-center">
+                            <form class="checkout_coupon" method="post" style="display: block !important;">
+                                <h3 class="coupon-title"><?php esc_html_e('Apply Promo Code or Gift Coupon', 'xstore'); ?></h3>
+                                <div class="coupon" style="display: block;">
+
+                                    <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_html_e( 'Coupon code', 'xstore' ); ?>" />
+                                    <!-- <input type="submit" class="btn" name="apply_coupon" value="&#9166;" /> -->
+                                    <?php do_action('woocommerce_cart_coupon'); ?>
+                                </div>
+                                <input type="submit" class="btn" name="apply_coupon" value="<?php esc_attr_e('Apply', 'xstore'); ?>" />
+                            </form>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            </div>
+
         </div>
     </div>
 
@@ -197,11 +215,6 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', wc_get_checko
 
                         </div>
 
-                        <div class="col-2">
-
-                            <?php do_action( 'woocommerce_checkout_shipping' ); ?>
-
-                        </div>
 
                     </div>
 

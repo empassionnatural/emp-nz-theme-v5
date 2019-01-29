@@ -77,4 +77,6 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 	<?php endif; ?>
 
+
+    <?php do_action( 'woocommerce_checkout_shipping' ); ?>
 </div>
