@@ -25,9 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 
     <?php wc_print_notices(); ?>
 
-<?php
-do_action( 'woocommerce_before_checkout_form', $checkout );
-?>
+
 <?php
 // If checkout registration is disabled and not logged in, the user cannot checkout
 if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_user_logged_in() ) {
@@ -38,9 +36,12 @@ if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_us
 // filter hook for include new pages inside the payment method
 $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', wc_get_checkout_url() ); ?>
 
-    <div class="row left-form col-md-5">
-        <div class="container">
 
+    <div class="left-form col-md-5">
+
+        <?php do_action( 'woocommerce_before_checkout_form', $checkout ); ?>
+
+        <div class="order-summary-form">
 
             <div class="order-review">
             <h3 class="header-title step-title"><span><?php esc_html_e( 'Order Summary', 'xstore' ); ?></span></h3>
@@ -140,6 +141,7 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', wc_get_checko
                     </tfoot>
                 </table>
 
+
             </div>
 
             <?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
@@ -165,10 +167,12 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', wc_get_checko
             </div>
 
         </div>
+        <?php do_action( 'woocommerce_after_checkout_form', $checkout ); ?>
+
     </div>
 
-    <div class="row right-form col-md-7">
-        <div class="container">
+    <div class="right-form col-md-7">
+
     <?php if ( wc_ship_to_billing_address_only() && WC()->cart->needs_shipping() ) : ?>
 
         <h3 class="header-title step-title"><span><?php esc_html_e( 'Billing &amp; Shipping', 'xstore' ); ?></span></h3>
@@ -258,7 +262,6 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', wc_get_checko
         </div>
 
     </form>
-        </div>
+
     </div>
 
-<?php do_action( 'woocommerce_after_checkout_form', $checkout ); ?>
