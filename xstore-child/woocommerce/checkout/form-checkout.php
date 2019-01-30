@@ -147,8 +147,8 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', wc_get_checko
 
             <div class="before-checkout-form">
                 <div class="add-coupon-code">
-                    <?php if ( wc_coupons_enabled() ) : $cols = 12; ?>
-                        <div class="col-md-<?php echo esc_attr($cols); ?> col-sm-<?php echo esc_attr($cols); ?> text-left mob-center">
+
+                        <div class="col-md-12 col-sm-12 text-left mob-center">
                             <form class="checkout_coupon" method="post" style="display: block !important;">
                                 <h3 class="coupon-title"><?php esc_html_e('Apply Promo Code or Gift Coupon', 'xstore'); ?></h3>
                                 <div class="coupon" style="display: block;">
@@ -160,7 +160,7 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', wc_get_checko
                                 <input type="submit" class="btn" name="apply_coupon" value="<?php esc_attr_e('Apply', 'xstore'); ?>" />
                             </form>
                         </div>
-                    <?php endif; ?>
+
                 </div>
             </div>
 
@@ -209,12 +209,28 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', wc_get_checko
 
                     <div id="customer_details">
 
-                        <div class="col-1">
+                        <div id="acc" class="accordion" onclick="openAccordion(event, 'acc','acctDet')" >
 
-                            <?php do_action( 'woocommerce_checkout_billing' ); ?>
+                            <h3 class="accordion-title step-title"><span><?php esc_html_e( 'Account Details', 'xstore' ); ?></span><span value="-" class="minus"><i class="et-icon et-minus"></i></span><span value="+" class="plus"><i class="et-icon et-plus"></i></span></h3>
 
                         </div>
 
+
+                        <div id="acctDet" class="accordion-desc max-height-accordion"  style="display: none;">
+
+                            <div class="col-1">
+
+                                <?php do_action( 'woocommerce_checkout_billing' ); ?>
+
+                            </div>
+
+                            <div class="col-1">
+
+                                <?php do_action( 'woocommerce_checkout_shipping' ); ?>
+
+                            </div>
+
+                        </div>
 
                     </div>
 

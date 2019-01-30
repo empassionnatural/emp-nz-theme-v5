@@ -193,8 +193,7 @@ do_action( 'woocommerce_before_cart' );
 	</div>
 
     <div class="col-md-6 add-coupon-code">
-        <?php if ( wc_coupons_enabled() ) : $cols = 12; ?>
-            <div class="col-md-<?php echo esc_attr($cols); ?> col-sm-<?php echo esc_attr($cols); ?> text-left mob-center">
+            <div class="col-md-12 col-sm-12 text-left mob-center">
                 <form class="checkout_coupon" method="post">
                     <h3 class="coupon-title"><?php esc_html_e('Apply Promo Code or Gift Coupon', 'xstore'); ?></h3>
                     <div class="coupon" style="display: block;">
@@ -206,8 +205,8 @@ do_action( 'woocommerce_before_cart' );
                     <input type="submit" class="btn" name="apply_coupon" value="<?php esc_attr_e('Apply', 'xstore'); ?>" />
                 </form>
             </div>
-        <?php endif; ?>
     </div>
+
 	<div class="col-md-6 cart-order-details">
 		<div class="cart-collaterals">
 			<?php do_action( 'woocommerce_cart_collaterals' ); ?>

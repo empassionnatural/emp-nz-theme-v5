@@ -10,13 +10,7 @@
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 ?>
 
-<div id="acc" class="accordion" onclick="openAccordion(event, 'acc','acctDet')" >
-
-    <h3 class="accordion-title step-title"><span><?php esc_html_e( 'Account Details', 'xstore' ); ?></span><span value="-" class="minus"><i class="et-icon et-minus"></i></span><span value="+" class="plus"><i class="et-icon et-plus"></i></span></h3>
-
-</div>
-
-<div id="acctDet" class="woocommerce-billing-fields"  style="display: none;">
+<div class="woocommerce-billing-fields" >
 
 <!--    <button class="accordion">--><?php //esc_html_e( 'Account Details', 'xstore' ); ?><!--</button>-->
 
@@ -78,5 +72,5 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	<?php endif; ?>
 
 
-    <?php do_action( 'woocommerce_checkout_shipping' ); ?>
+
 </div>
