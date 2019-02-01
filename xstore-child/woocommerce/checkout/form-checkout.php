@@ -39,7 +39,7 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', wc_get_checko
 
     <div class="left-form col-md-5">
 
-        <?php do_action( 'woocommerce_before_checkout_form', $checkout ); ?>
+
 
         <div class="order-summary-form">
 
@@ -147,26 +147,9 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', wc_get_checko
             <?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
         </div>
 
-            <div class="before-checkout-form">
-                <div class="add-coupon-code">
-
-                        <div class="col-md-12 col-sm-12 text-left mob-center">
-                            <form class="checkout_coupon" method="post" style="display: block !important;">
-                                <h3 class="coupon-title"><?php esc_html_e('Apply Promo Code or Gift Coupon', 'xstore'); ?></h3>
-                                <div class="coupon" style="display: block;">
-
-                                    <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_html_e( 'Coupon code', 'xstore' ); ?>" />
-                                    <!-- <input type="submit" class="btn" name="apply_coupon" value="&#9166;" /> -->
-                                    <?php do_action('woocommerce_cart_coupon'); ?>
-                                </div>
-                                <input type="submit" class="btn" name="apply_coupon" value="<?php esc_attr_e('Apply', 'xstore'); ?>" />
-                            </form>
-                        </div>
-
-                </div>
-            </div>
-
         </div>
+        
+        <?php do_action( 'woocommerce_before_checkout_form', $checkout ); ?>
         <?php do_action( 'woocommerce_after_checkout_form', $checkout ); ?>
 
     </div>
@@ -184,7 +167,7 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', wc_get_checko
     <?php if ( ! is_user_logged_in() && $checkout->is_registration_enabled() ) : ?>
         <div class="if-login">
             <div id="return-user" class="accordion" onclick="openAccordion(event, 'return-user','login-form')" >
-                <h3 class="accordion-title step-title"><span><?php esc_html_e( 'Already have an account? Sign in', 'xstore' ); ?></span><span value="-" class="minus"><i class="et-icon et-minus"></i></span><span value="+" class="plus"><i class="et-icon et-plus"></i></span></h3>
+                <h3 class="accordion-title step-title"><span><?php esc_html_e( 'Sign in Here!', 'xstore' ); ?></span><span value="-" class="minus"><i class="et-icon et-minus"></i></span><span value="+" class="plus"><i class="et-icon et-plus"></i></span></h3>
             </div>
 
             <div id="login-form" class="accordion-sibling" style="display: none;">

@@ -106,10 +106,14 @@ var openTabs = function(evt, cityName) {
 var openAccordion = function(evt , id1 , id2) {
     var y = document.getElementById(id1);
     var x = document.getElementById(id2);
+    var acctDet = "acctDet";
     if (x.className.indexOf("wp-show") == -1) {
         y.className += " active";
         x.className += " wp-show";
         x.style.maxHeight = x.scrollHeight  + "px";
+        if(id2 == acctDet){
+            document.getElementById(id2).style.maxHeight = "1696px";
+        }
     } else {
         y.className = y.className.replace(" active","")
         x.className = x.className.replace(" wp-show", "");

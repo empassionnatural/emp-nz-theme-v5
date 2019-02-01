@@ -153,15 +153,18 @@ do_action( 'woocommerce_before_cart' );
                             </td>
 
                             <td class="product-subtotal" data-title="<?php esc_attr_e( 'Total', 'xstore' ); ?>">
+
                                 <?php
                                 echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key );
                                 ?>
+
                             </td>
                             <td class="product-remove">
 
                                 <?php
-                                echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf( '<a href="%s" class="btn remove-item" title="%s">X</a>', esc_url( wc_get_cart_remove_url( $cart_item_key ) ), __( 'Remove this item', 'xstore' ) ), $cart_item_key );
+                                echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf( '<a href="%s" class="btn remove-item" title="%s"><i class="icon vc_icon_element-icon fa fa-trash"></i></a>', esc_url( wc_get_cart_remove_url( $cart_item_key ) ), __( 'Remove this item', 'xstore' ) ), $cart_item_key );
                                 ?>
+
                             </td>
                         </tr>
                         <?php
@@ -183,7 +186,7 @@ do_action( 'woocommerce_before_cart' );
 
 			<div class="col-md-<?php echo esc_attr($cols); ?> col-sm-<?php echo esc_attr($cols); ?> mob-center">
 
-				<button type="submit" class="btn gray" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'xstore' ); ?>"><?php esc_html_e( 'Update cart', 'xstore' ); ?></button>
+				<button type="submit" class="btn gray update-btn" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'xstore' ); ?>"><?php esc_html_e( 'Update cart', 'xstore' ); ?></button>
 				<?php wp_nonce_field( 'woocommerce-cart' ); ?>
 				<?php do_action( 'woocommerce_cart_actions' ); ?>
 			</div>
@@ -201,6 +204,7 @@ do_action( 'woocommerce_before_cart' );
                         <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_html_e( 'Coupon code', 'xstore' ); ?>" />
                         <!-- <input type="submit" class="btn" name="apply_coupon" value="&#9166;" /> -->
                         <?php do_action('woocommerce_cart_coupon'); ?>
+
                     </div>
                     <input type="submit" class="btn" name="apply_coupon" value="<?php esc_attr_e('Apply', 'xstore'); ?>" />
                 </form>
