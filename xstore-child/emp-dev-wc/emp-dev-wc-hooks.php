@@ -262,3 +262,32 @@ function add_something() {
 }
 
 add_action('woocommerce_checkout_order_review','add_something');
+
+function myaccount_nav_icon($nav_id){
+    switch ($nav_id) {
+        case "Dashboard":
+            echo "pie-chart";
+            break;
+        case "Orders":
+            echo "shopping-basket";
+            break;
+        case "Downloads":
+            echo "download";
+            break;
+        case "Coupons":
+            echo "ticket";
+            break;
+        case "Addresses":
+            echo "home";
+            break;
+        case "Payment methods":
+            echo "money";
+            break;
+        case "Account details":
+            echo "user-circle";
+            break;
+        case "Logout":
+            echo "sign-out";
+            break;
+    }
+}
