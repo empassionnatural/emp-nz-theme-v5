@@ -1,10 +1,13 @@
+.woocommerce-cart-form .table-responsive {
+    overflow-x: unset;
+}
 #coupon_code.input-text {
     border: 1px solid #818181 !important;
 }
 .woocommerce-cart-form table td.product-name {
     vertical-align: middle;
 }
-.woocommerce .add-coupon-code {
+.woocommerce-cart .template-content .content-page .woocommerce .woocommerce .add-coupon-code {
     padding-right: 5px !important;
 }
 .woocommerce-cart-form .actions .btn:hover {
@@ -48,13 +51,13 @@ td.product-details, td.product-price, td.product-quantity, td.product-subtotal, 
 table tr:first-child td.product-details,table tr:first-child td.product-price,table tr:first-child td.product-quantity,table tr:first-child td.product-subtotal,table tr:first-child td.product-remove  {
     padding-top: 33px;
 }
-
-.woocommerce .add-coupon-code {
-    padding-right: 5px !important;
-}
-.woocommerce .cart-order-details {
+.woocommerce-cart .template-content .content-page .woocommerce .cart-order-details {
     padding-left: 5px !important;
 }
+.woocommerce-cart .template-content .content-page .woocommerce .woocommerce .add-coupon-code {
+    padding-right: 5px !important;
+}
+
 .wc-proceed-to-checkout a.checkout-button.button.alt.wc-forward {
     font-size: 15px;
     font-weight: bold;
@@ -199,11 +202,11 @@ table.shop_table tbody tr.cart_item {
     }
 }
 @media (max-width:992px) {
-    .woocommerce .add-coupon-code {
+    .woocommerce-cart .template-content .content-page .woocommerce .woocommerce .add-coupon-code {
         padding-right: 15px !important;
         padding-left: 15px !important;
     }
-    .woocommerce .cart-order-details {
+    .woocommerce-cart .template-content .content-page .woocommerce .cart-order-details {
         padding-right: 15px !important;
         padding-left: 15px !important;
     }
@@ -217,10 +220,10 @@ table.shop_table tbody tr.cart_item {
     }
 }
 @media (max-width:768px) {
-    .woocommerce .add-coupon-code {
+    .woocommerce-cart .template-content .content-page .woocommerce .woocommerce .add-coupon-code {
         padding-right: 15px !important;
     }
-    .woocommerce .cart-order-details {
+    .woocommerce-cart .template-content .content-page .woocommerce .cart-order-details {
         padding-left: 15px !important;
         height: 390px !important;
     }
