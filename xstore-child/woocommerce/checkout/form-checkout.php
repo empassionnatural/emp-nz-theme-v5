@@ -39,7 +39,7 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', wc_get_checko
 
     <div class="left-form col-md-5">
 
-	    <?php do_action( 'woocommerce_before_checkout_form', $checkout ); ?>
+
 
         <div class="order-summary-form">
 
@@ -132,10 +132,8 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', wc_get_checko
                     <?php do_action( 'woocommerce_review_order_before_order_total' ); ?>
 
                     <tr class="order-total">
-
                         <th><?php _e( 'Total', 'woocommerce' ); ?></th>
-                        <td><span class="order-totals-tax"><?php wc_cart_totals_order_total_html(); ?></span></td>
-
+                        <td><?php wc_cart_totals_order_total_html(); ?></td>
                     </tr>
 
                     <?php do_action( 'woocommerce_review_order_after_order_total' ); ?>
@@ -151,6 +149,7 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', wc_get_checko
 
         </div>
 
+        <?php do_action( 'woocommerce_before_checkout_form', $checkout ); ?>
         <?php do_action( 'woocommerce_after_checkout_form', $checkout ); ?>
 
     </div>
