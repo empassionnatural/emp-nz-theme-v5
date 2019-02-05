@@ -208,6 +208,10 @@ do_action( 'woocommerce_before_cart' );
                     </div>
                     <input type="submit" class="btn" name="apply_coupon" value="<?php esc_attr_e('Apply', 'xstore'); ?>" />
                 </form>
+                <div class="giftwrapper">
+	                <?php do_action('woocommerce_cart_giftwrap'); ?>
+                </div>
+
             </div>
     </div>
 

@@ -343,6 +343,7 @@ if (in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', ge
 		switch($gema75_giftwrap_selpos){
 			case 'woocommerce_before_cart':
 				add_action('woocommerce_before_cart' , 'gema75_add_gift_wrap_to_order');
+
 				break;
 			
 			case 'woocommerce_after_cart_table':
@@ -350,7 +351,9 @@ if (in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', ge
 				break;
 			
 			case 'woocommerce_after_cart':
-				add_action('woocommerce_after_cart' , 'gema75_add_gift_wrap_to_order');
+			    //edited --->
+				//add_action('woocommerce_after_cart' , 'gema75_add_gift_wrap_to_order');
+                add_action( 'woocommerce_cart_giftwrap', 'gema75_add_gift_wrap_to_order' );
 				break;
 			
 			default :

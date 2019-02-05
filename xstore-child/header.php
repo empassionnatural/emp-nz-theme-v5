@@ -5,6 +5,24 @@
 	<meta name="viewport" content="user-scalable=1, width=device-width, initial-scale=1, maximum-scale=2.0"/>
 	<?php wp_head(); ?>
     <style>
+        /*Giftwrap*/
+        .giftwrapper #gemagiftfront{
+            width: 100%;
+            max-width: 423px;
+            border: 3px dashed #c7c7c7;
+            background: white;
+            margin: auto;
+        }
+        .giftwrapper #gemagiftfront ul li{
+            display: inline-block;
+            float: none;
+        }
+        .giftwrapper #gemagiftfront form{
+            padding: 10px;
+            width: auto;
+            border: none;
+        }
+
         /*Fixed bugs woocommerce*/
         .shopping-container .cart-bag .badge-number{
             background-color: #000;
