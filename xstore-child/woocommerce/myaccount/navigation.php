@@ -22,16 +22,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 do_action( 'woocommerce_before_account_navigation' );
 ?>
-
+<?php $user_info = get_userdata( get_current_user_id() ); ?>
 <nav class="woocommerce-MyAccount-navigation">
 	<ul>
-        <li class="navigation-header">
-            <i class="icon vc_icon_element-icon fa fa-user-circle"></i>
-            <div>
-                <h3><?php echo esc_attr( $user->first_name ); ?> <?php echo esc_attr( $user->last_name ); ?></h3>
-                <p><?php echo esc_attr( $user->user_email ); ?></p>
+        <li class="navigation-header" style="height: 121px;">
+            <div class="user-icon">
+                <i class="icon vc_icon_element-icon fa fa-user"></i>
+            </div>
+            <div class="user-detail">
+                <h3><?php echo esc_attr( $user_info->first_name ); ?> <?php echo esc_attr( $user_info->last_name ); ?></h3>
+                <p><?php echo esc_attr( $user_info->user_email ); ?></p>
             </div>
         </li>
+
 		<?php foreach ( wc_get_account_menu_items() as $endpoint => $label ) : ?>
 			<li class="<?php echo wc_get_account_menu_item_classes( $endpoint ); ?>">
 
