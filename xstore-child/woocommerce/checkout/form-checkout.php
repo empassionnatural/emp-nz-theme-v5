@@ -39,7 +39,7 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', wc_get_checko
 
     <div class="left-form col-md-5">
 
-
+	    <?php do_action( 'woocommerce_before_checkout_form', $checkout ); ?>
 
         <div class="order-summary-form">
 
@@ -149,7 +149,7 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', wc_get_checko
 
         </div>
         
-        <?php do_action( 'woocommerce_before_checkout_form', $checkout ); ?>
+
         <?php do_action( 'woocommerce_after_checkout_form', $checkout ); ?>
 
     </div>

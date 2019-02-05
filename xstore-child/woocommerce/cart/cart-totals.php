@@ -19,11 +19,11 @@
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
-//if( class_exists( 'WWP_Wholesale_Prices' ) ){
-//	$wholesale_class = EMPDEV_WWPP_Wholesale_Price_Requirement::$on_wholesale;
-//}
+if( class_exists( 'WWP_Wholesale_Prices' ) ){
+	$wholesale_class = EMPDEV_WWPP_Wholesale_Price_Requirement::$on_wholesale;
+}
 
-//$user = wp_get_current_user();
+$user = wp_get_current_user();
 ?>
 <div class="cart_totals <?php echo ( WC()->customer->has_calculated_shipping() ) ? 'calculated_shipping' : ''; ?>">
 
@@ -45,11 +45,20 @@ if ( ! defined( 'ABSPATH' ) ) {
                 </tr>
             <?php endforeach; ?>
 
+	        <?php do_action( 'woocommerce_wholesale_sub_total_row', $wholesale_class ); ?>
+
             <?php if ( WC()->cart->needs_shipping() && WC()->cart->show_shipping() ) : ?>
 
                 <?php do_action( 'woocommerce_cart_totals_before_shipping' ); ?>
 
-                <?php wc_cart_totals_shipping_html(); ?>
+	            <?php  if( ! in_array( 'wholesale_customer', $user->roles ) ) : ?>
+		            <?php wc_cart_totals_shipping_html(); ?>
+	            <?php else :?>
+                    <tr class="shipping wholesale-shipping">
+                        <th><?php _e( 'Shipping', 'woocommerce' ); ?></th>
+                        <td data-title="<?php esc_attr_e( 'Shipping', 'woocommerce' ); ?>"><p>Calculate shipping on checkout</p></td>
+                    </tr>
+	            <?php endif; ?>
 
                 <?php do_action( 'woocommerce_cart_totals_after_shipping' ); ?>
 
@@ -57,7 +66,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
                 <tr class="shipping">
                     <th><?php _e( 'Shipping', 'woocommerce' ); ?></th>
-                    <td data-title="<?php esc_attr_e( 'Shipping', 'woocommerce' ); ?>"><?php woocommerce_shipping_calculator(); ?></td>
+		            <?php  if( ! in_array( 'wholesale_customer', $user->roles ) ) : ?>
+                        <td data-title="<?php esc_attr_e( 'Shipping', 'woocommerce' ); ?>"><?php woocommerce_shipping_calculator(); ?></td>
+		            <?php else :?>
+                        <td data-title="<?php esc_attr_e( 'Shipping', 'woocommerce' ); ?>">Calculate shipping on checkout</td>
+		            <?php endif; ?>
                 </tr>
 
             <?php endif; ?>
