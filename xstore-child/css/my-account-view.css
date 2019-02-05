@@ -1,0 +1,272 @@
+
+.woocommerce .woocommerce-MyAccount-content {
+    padding-left: 25px;
+    max-width: 908px;
+    width: 100%;
+}
+.woocommerce-form.woocommerce-form-login.login {
+    height: 250px;
+    max-height: 250px;
+}
+/*#login-form .error-box .woocommerce-error li {*/
+    /*font-weight: 1 !important;*/
+/*}*/
+#login-form .error-box .woocommerce-error {
+    color: black !important;
+}
+#register-form.u-column2.col-2 {
+    display: none;
+}
+#login-form.u-column1.col-1 , #login-bground.u-column1.col-2 {
+    width: 50% !important;
+}
+#login-form.u-column1.col-1 {
+    border: 0px;
+}
+.header-wrapper.header-xstore.header-color-dark , #customer_login .col-1, #customer_login .col-2  {
+    margin-bottom: 0px !important;
+}
+#customer_login {
+    margin: 0 0;
+}
+#customer_login .col-1 {
+    padding-top: 5.57em !important;
+}
+#customer_login > div {
+    padding: 0em !important;
+    border: 0px !important;
+}
+#login-bground .vc_column-inner {
+    background-image: url(/wp-content/uploads/2018/10/Capture.jpg) !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+#login-bground .vc_column-inner {
+    padding-top: 65%;
+    padding-bottom: 72%;
+}
+.container.content-page {
+    padding-bottom: 0px;
+}
+.wpb_text_column.wpb_content_element {
+    margin-bottom: 0px;
+}
+#login-form.col-1 {
+    margin-right: 0px !important;
+}
+form.login .button {
+    background-color: #88af2c;
+    border-width: 0px;
+    color: white;
+    margin-right: auto;
+    height: auto;
+    line-height: 1.2;
+    transition: .5s ease;
+    width: 50%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+form.login .button:hover {
+    background-color: #ffffff !important;
+    border: 0px !important;
+    color: #88af2c !important;
+}
+#login-form .url_register .woocommerce-Button.button {
+    background-color: #ffffff !important;
+    color: #88af2c !important;
+    border: 0 !important;
+    width: 50%;
+    max-width: 260px;
+    transition: .5s ease;
+}
+#login-form .url_register .woocommerce-Button.button:hover {
+    background-color: #88af2c !important;
+    color: #ffffff !important;
+}
+#login-form #password, #login-form #username {
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    background-color: transparent !important;
+}
+#login-form {
+    background: linear-gradient(to right, #e4ffee , #fdecc6);
+    padding-top: 126px !important;
+    height: 781px;
+    max-height: 781px;
+}
+#login-form .p_or {
+    text-align: center;
+}
+#login-form .url_register {
+    text-align: center;
+    margin-top: 3%;
+}
+#login-form .form-row.submit-button {
+    width: 100% !important;
+    text-align: center;
+}
+#login-form .lost-remember {
+    width: 100%;
+    text-align: center;
+}
+#login-form h2 {
+    margin-top: 0;
+    font-size: 2.1428em;
+    margin-bottom: 0;
+    font-weight: bold;
+    text-transform: none;
+    border: 0;
+}
+#login-form .error-box {
+    height: 130px;
+    max-height: 130px;
+}
+
+/*----------------------------------- my-account dashboard */
+.woocommerce .woocommerce-MyAccount-content {
+    width: 774px;
+}
+.woocommerce-MyAccount-navigation {
+    max-width: 362px;
+    width: 50%;
+}
+.woocommerce-MyAccount-navigation .navigation-header {
+    background-color: #4d4d4d;
+}
+.woocommerce-MyAccount-navigation li.is-active i.icon {
+    padding-left: 10px;
+}
+.woocommerce-MyAccount-navigation li.is-active span {
+    padding-left: 22px;
+}
+.woocommerce-MyAccount-navigation .user-icon i.icon::before, .woocommerce-MyAccount-navigation .user-detail h3, .woocommerce-MyAccount-navigation .user-detail p {
+    color: white !important;
+}
+.woocommerce-MyAccount-navigation .user-icon i.icon {
+    height: 110px !important;
+}
+.woocommerce-MyAccount-navigation .user-icon i.icon::before{
+    font-size: 48px !important;
+    padding-top: 41px !important;
+    display: block;
+}
+
+.woocommerce-MyAccount-navigation .user-icon {
+    width: 110px;
+    float: left;
+    padding-top: 7px;
+}
+.woocommerce-MyAccount-navigation .user-detail {
+    width: 250px;
+    float: right;
+    padding: 28px;
+    padding-left: 0px;
+}
+.woocommerce  .woocommerce-MyAccount-content {
+    margin:20px 0px;
+}
+.woocommerce-MyAccount-title.entry-title {
+    margin-top: 30px !important;
+}
+.woocommerce-MyAccount-content {
+    margin-bottom: 30px !important;
+}
+.woocommerce-MyAccount-navigation {
+    margin-right: 0px;
+}
+.woocommerce-MyAccount-navigation ul {
+    background-color: #e6e6e6;
+}
+.woocommerce-MyAccount-navigation .is-active {
+    border-left: 10px solid #88af2c;
+}
+
+.woocommerce-MyAccount-navigation .woocommerce-MyAccount-navigation-link a {
+    display: inline-block;
+    width: 100%;
+}
+.woocommerce-MyAccount-navigation li.woocommerce-MyAccount-navigation-link--customer-logout {
+    padding-top: 108px;
+    padding-bottom: 15px;
+}
+.woocommerce-MyAccount-navigation li.is-active a {
+    background-color: #eeeeee;
+}
+.woocommerce-MyAccount-navigation .woocommerce-MyAccount-navigation-link i.icon {
+    width: 30% !important;
+}
+.woocommerce-MyAccount-navigation .woocommerce-MyAccount-navigation-link i.icon::before {
+    color: #4d4d4d !important;
+}
+.woocommerce-MyAccount-navigation .is-active i.icon {
+    width: 22% !important;
+}
+.woocommerce-MyAccount-navigation .is-active i.icon::before {
+    color: #88af2c !important;
+}
+@media (max-width:1199px) {
+    #login-form {
+        height: 644px;
+        max-height: 644px;
+    }
+    #customer_login .col-1 {
+        padding-top: 1.57em !important;
+    }
+    /*----------------------------------- my-account dashboard */
+
+}
+@media (max-width: 992px) {
+    form.login .button , #login-form .url_register .woocommerce-Button.button {
+        width: 70% !important;
+        max-width: 250px;
+    }
+    /*----------------------------------- my-account dashboard */
+
+}
+@media (max-width: 991px) {
+    #customer_login .col-1 {
+        padding-top: 1.57em !important;
+    }
+    #customer_login .col-1 {
+        padding: 2em !important;
+    }
+    #login-bground .vc_column-inner {
+        padding-top: 90%;
+        padding-bottom: 89%;
+    }
+    /*----------------------------------- my-account dashboard */
+
+}
+@media (max-width: 768px){
+    .container.content-page {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    #login-bground .vc_column-inner {
+        padding-top: 20%;
+        padding-bottom: 40%;
+    }
+    #login-form.u-column1.col-1, #login-bground.u-column1.col-2 {
+        width: 100% !important;
+    }
+    #login-form h2 , form.login {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #login-form h2 {
+        width: 100%;
+        max-width: 500px;
+    }
+    /*----------------------------------- my-account dashboard */
+
+}
+@media (max-width: 414px){
+    #login-bground .vc_column-inner {
+        padding-top: 35%;
+        padding-bottom: 35%;
+    }
+    /*----------------------------------- my-account dashboard */
+
+}

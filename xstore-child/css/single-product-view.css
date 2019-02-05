@@ -1,4 +1,10 @@
 /*-------------------------product single page*/
+.tabs-with-scroll.accordion .tab-content .tab-content-inner {
+    max-height: 252px;
+    padding-bottom: 10px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
 .page-heading .row .a-center .title ,
 .tabs.accordion .accordion-title , .product-share , #content_tab_reviews  {
     display: none;
