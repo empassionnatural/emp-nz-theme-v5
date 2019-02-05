@@ -36,8 +36,9 @@ if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_us
 // filter hook for include new pages inside the payment method
 $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', wc_get_checkout_url() ); ?>
 
-    <div class="left-form col-md-5">
+<?php do_action( 'woocommerce_before_checkout_form', $checkout ); ?>
 
+    <div class="left-form col-md-5">
 
         <div class="order-summary-form">
 
@@ -147,7 +148,6 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', wc_get_checko
 
         </div>
 
-        <?php do_action( 'woocommerce_before_checkout_form', $checkout ); ?>
         <?php do_action( 'woocommerce_after_checkout_form', $checkout ); ?>
 
     </div>
