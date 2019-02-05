@@ -4,7 +4,7 @@
     max-width: 908px;
     width: 100%;
 }
-.woocommerce-form.woocommerce-form-login.login {
+#customer_login #login-form .woocommerce-form.woocommerce-form-login.login {
     height: 250px;
     max-height: 250px;
 }
@@ -90,7 +90,7 @@ form.login .button:hover {
     border-right: 0;
     background-color: transparent !important;
 }
-#login-form {
+#customer_login #login-form {
     background: linear-gradient(to right, #e4ffee , #fdecc6);
     padding-top: 126px !important;
     height: 781px;
@@ -207,7 +207,7 @@ form.login .button:hover {
     color: #88af2c !important;
 }
 @media (max-width:1199px) {
-    #login-form {
+    #customer_login #login-form {
         height: 644px;
         max-height: 644px;
     }

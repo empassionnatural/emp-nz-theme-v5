@@ -132,8 +132,10 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', wc_get_checko
                     <?php do_action( 'woocommerce_review_order_before_order_total' ); ?>
 
                     <tr class="order-total">
+
                         <th><?php _e( 'Total', 'woocommerce' ); ?></th>
-                        <td><?php wc_cart_totals_order_total_html(); ?></td>
+                        <td><span class="order-totals-tax"><?php wc_cart_totals_order_total_html(); ?></span></td>
+
                     </tr>
 
                     <?php do_action( 'woocommerce_review_order_after_order_total' ); ?>
@@ -192,8 +194,6 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', wc_get_checko
 
                 <?php if ( sizeof( $checkout->checkout_fields ) > 0 ) : ?>
 
-                    <?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
-
                     <div id="customer_details">
 
                         <div id="acc" class="accordion" onclick="openAccordion(event, 'acc','acctDet')" >
@@ -205,23 +205,25 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', wc_get_checko
 
                         <div id="acctDet" class="accordion-desc max-height-accordion"  style="display: none;">
 
-                            <div class="col-1">
+                            <?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
 
-                                <?php do_action( 'woocommerce_checkout_billing' ); ?>
+                                <div class="col-1">
 
-                            </div>
+                                    <?php do_action( 'woocommerce_checkout_billing' ); ?>
 
-                            <div class="col-1">
+                                </div>
 
-                                <?php do_action( 'woocommerce_checkout_shipping' ); ?>
+                                <div class="col-1">
 
-                            </div>
+                                    <?php do_action( 'woocommerce_checkout_shipping' ); ?>
+
+                                </div>
+
+                            <?php do_action( 'woocommerce_checkout_after_customer_details' ); ?>
 
                         </div>
 
                     </div>
-
-                    <?php do_action( 'woocommerce_checkout_after_customer_details' ); ?>
 
                 <?php endif; ?>
 

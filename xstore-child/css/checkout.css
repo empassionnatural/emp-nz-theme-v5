@@ -67,6 +67,9 @@ h3.step-title {
 h3.header-title {
     font-size: 20px;
 }
+.right-form .if-login #login-form {
+    padding: 0px 15px;
+}
 .right-form .header-title.step-title {
     line-height: 3.1 !important;
 }
@@ -130,6 +133,9 @@ h3.header-title {
 .right-form .cart-order-details .step-title , .right-form .checkout .col-md-12 {
     margin-bottom: 0px;
     border-bottom: 0px;
+}
+.right-form form.checkout.woocommerce-checkout {
+    margin-bottom: 15px;
 }
 /*.left-form .woocommerce-form-coupon-toggle ,.left-form  .checkout_coupon.woocommerce-form-coupon{*/
 /*    display: none;*/
@@ -254,11 +260,11 @@ h3.header-title {
 .woocommerce #coupons_list {
     display: none;
 }
-#gemagiftfront form {
+.left-form #gemagiftfront form {
     width: 100%;
 }
-#gemagiftfront ul  {
-    margin: 0px 31px;
+.left-form #gemagiftfront ul  {
+    margin: 0px 0px;
     display: inline-block;
 }
 .woocommerce form .form-row select, .woocommerce-page form .form-row select {
@@ -268,7 +274,7 @@ h3.header-title {
     display: -webkit-box;
 }
 @media (max-width:1024px) {
-    /*#gemagiftfront ul {*/
+    /*.left-form #gemagiftfront ul {*/
     /*    margin: 0px 18px;*/
     /*}*/
 }
@@ -279,7 +285,7 @@ h3.header-title {
     .order-review table td {
         width: 65%;
     }
-    #gemagiftfront ul {
+    .left-form #gemagiftfront ul {
         margin: 0px 105px;
     }
     .woocommerce .left-form {
@@ -298,7 +304,7 @@ h3.header-title {
     .right-form .header-title.step-title {
         line-height: 3.5 !important;
     }
-    #gemagiftfront ul {
+    .left-form #gemagiftfront ul {
         margin: 0px 105px;
     }
     .left-form .order-review .shop_table tfoot .order-total td {
@@ -313,7 +319,7 @@ h3.header-title {
     .left-form .order-summary-form .order-review .header-title.step-title, .right-form .header-title.step-title {
         line-height: 3.8 !important;
     }
-    #gemagiftfront ul {
+    .left-form #gemagiftfront ul {
         margin: 0px 5px;
     }
     h3.step-title {
@@ -329,7 +335,7 @@ h3.header-title {
 }
 @media (max-width: 320px) {
 
-    #gemagiftfront ul {
+    .left-form #gemagiftfront ul {
         margin: 0px -5px;
     }
 
