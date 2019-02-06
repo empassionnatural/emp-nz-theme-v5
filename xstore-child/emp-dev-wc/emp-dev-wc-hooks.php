@@ -263,7 +263,7 @@ function add_something() {
 
 add_action('woocommerce_checkout_order_review','add_something');
 
-function myaccount_nav_icon($nav_id){
+function empdev_myaccount_nav_icon($nav_id){
     switch ($nav_id) {
         case "Dashboard":
             echo "pie-chart";

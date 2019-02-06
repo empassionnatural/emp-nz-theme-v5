@@ -92,10 +92,14 @@ form.login .button:hover {
 }
 #customer_login #login-form {
     background: linear-gradient(to right, #e4ffee , #fdecc6);
-    padding-top: 126px !important;
-    height: 781px;
-    max-height: 781px;
+    padding: 2.7em 3.6em 228px !important;
+    max-width: 570px;
+    width: 100% !important;
 }
+/*#customer_login #login-form  h2 , #customer_login #login-form form.login {*/
+    /*max-width: 0px !important;*/
+    /*margin: 0 auto 0em !important;*/
+/*}*/
 #login-form .p_or {
     text-align: center;
 }
@@ -210,6 +214,7 @@ form.login .button:hover {
     #customer_login #login-form {
         height: 644px;
         max-height: 644px;
+        max-width: 469px;
     }
     #customer_login .col-1 {
         padding-top: 1.57em !important;
@@ -236,6 +241,9 @@ form.login .button:hover {
         padding-top: 90%;
         padding-bottom: 89%;
     }
+    #customer_login #login-form {
+        max-width: 360px;
+    }
     /*----------------------------------- my-account dashboard */
 
 }
@@ -246,18 +254,21 @@ form.login .button:hover {
     }
     #login-bground .vc_column-inner {
         padding-top: 20%;
-        padding-bottom: 40%;
+        padding-bottom: 20%;
     }
     #login-form.u-column1.col-1, #login-bground.u-column1.col-2 {
         width: 100% !important;
     }
-    #login-form h2 , form.login {
+    #login-form h2 , login-form form.login {
         margin-left: auto;
         margin-right: auto;
     }
-    #login-form h2 {
+    #login-form h2, #login-form form.login {
         width: 100%;
         max-width: 500px;
+    }
+    #customer_login #login-form {
+        max-width: 718px;
     }
     /*----------------------------------- my-account dashboard */
 
@@ -266,6 +277,13 @@ form.login .button:hover {
     #login-bground .vc_column-inner {
         padding-top: 35%;
         padding-bottom: 35%;
+    }
+    #customer_login #login-form {
+        padding: 15px !important;
+    }
+    form.login .button, #login-form .url_register .woocommerce-Button.button {
+        width: 100% !important;
+        max-width: 333px !important;
     }
     /*----------------------------------- my-account dashboard */
 
