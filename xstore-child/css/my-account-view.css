@@ -8,9 +8,9 @@
     height: 250px;
     max-height: 250px;
 }
-/*#login-form .error-box .woocommerce-error li {*/
-    /*font-weight: 1 !important;*/
-/*}*/
+#login-form .error-box .woocommerce-error li {
+    font-weight: 1 !important;
+}
 #login-form .error-box .woocommerce-error {
     color: black !important;
 }
