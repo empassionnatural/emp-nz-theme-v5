@@ -6,7 +6,6 @@
  * Date: 8/27/2018
  * Time: 11:38 AM
  */
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 if( class_exists('WooCommerce' ) ) {
 	class EMPDEV_WC_Static_Helper {

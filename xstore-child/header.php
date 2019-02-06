@@ -12,6 +12,7 @@
             border: 3px dashed #c7c7c7;
             background: white;
             margin: auto;
+            float: none;
         }
         .giftwrapper #gemagiftfront ul li{
             display: inline-block;
