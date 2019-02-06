@@ -38,7 +38,7 @@ do_action( 'woocommerce_before_account_navigation' );
 		<?php foreach ( wc_get_account_menu_items() as $endpoint => $label ) : ?>
 			<li class="<?php echo wc_get_account_menu_item_classes( $endpoint ); ?>">
 
-                <a href="<?php echo esc_url( wc_get_account_endpoint_url( $endpoint ) ); ?>"><i class="icon vc_icon_element-icon fa fa-<?php myaccount_nav_icon($label);?>"></i><span><?php echo esc_html( $label ); ?></span></a>
+                <a href="<?php echo esc_url( wc_get_account_endpoint_url( $endpoint ) ); ?>"><i class="icon vc_icon_element-icon fa fa-<?php empdev_myaccount_nav_icon($label);?>"></i><span><?php echo esc_html( $label ); ?></span></a>
 			</li>
 		<?php endforeach; ?>
 	</ul>
