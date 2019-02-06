@@ -149,6 +149,21 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', wc_get_checko
 
         </div>
 
+        <div class="add-coupon-code">
+                <div class="col-md-12 col-sm-12 text-left mob-center">
+                    <form class="checkout_coupon" method="post" style="display: block !important;">
+                        <h3 class="coupon-title"><?php esc_html_e('Apply Promo Code or Gift Coupon', 'xstore'); ?></h3>
+                        <div class="coupon" style="display: block;">
+
+                            <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_html_e( 'Coupon code', 'xstore' ); ?>" />
+                            <!-- <input type="submit" class="btn" name="apply_coupon" value="&#9166;" /> -->
+                            <?php do_action('woocommerce_cart_coupon'); ?>
+                        </div>
+                        <input type="submit" class="btn" name="apply_coupon" value="<?php esc_attr_e('Apply', 'xstore'); ?>" />
+                    </form>
+                </div>
+        </div>
+
         <?php do_action( 'woocommerce_after_checkout_form', $checkout ); ?>
 
     </div>
@@ -191,7 +206,7 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', wc_get_checko
 
                 <?php if ( sizeof( $checkout->checkout_fields ) > 0 ) : ?>
 
-                    <?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
+
 
                     <div id="customer_details">
 
@@ -203,7 +218,7 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', wc_get_checko
 
 
                         <div id="acctDet" class="accordion-desc max-height-accordion"  style="display: none;">
-
+                            <?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
                             <div class="col-1">
 
                                 <?php do_action( 'woocommerce_checkout_billing' ); ?>
@@ -215,12 +230,12 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', wc_get_checko
                                 <?php do_action( 'woocommerce_checkout_shipping' ); ?>
 
                             </div>
-
+                            <?php do_action( 'woocommerce_checkout_after_customer_details' ); ?>
                         </div>
 
                     </div>
 
-                    <?php do_action( 'woocommerce_checkout_after_customer_details' ); ?>
+
 
                 <?php endif; ?>
 

@@ -35,6 +35,9 @@ add_action( 'wp_enqueue_scripts', 'empdev_custom_scripts_frontend', 99 );
 function empdev_custom_scripts_frontend(){
 	global $post;
 	$post_id = $post->ID;
+    $bloglink = get_bloginfo('url');
+    $actual_link = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
     if ( is_front_page() ) {
         wp_enqueue_style('font-lobster-css-style', 'https://fonts.googleapis.com/css?family=Lobster+Two', array(), '1.1.10');
         wp_enqueue_style('home-custom-style', get_stylesheet_directory_uri() . '/css/home-custom-style.css' , array(), '1.1.10');
@@ -43,7 +46,12 @@ function empdev_custom_scripts_frontend(){
 	wp_enqueue_style( 'custom-style', get_stylesheet_directory_uri() . '/css/custom-style.css', array(), '3.2.0' );
     wp_enqueue_style( 'cart-style', get_stylesheet_directory_uri() . '/css/cart-view.css', array(), '1.0.1' );
     wp_enqueue_style( 'checkout-style', get_stylesheet_directory_uri() . '/css/checkout.css', array(), '1.0.0' );
+
+
     wp_enqueue_style( 'myaccount-style', get_stylesheet_directory_uri() . '/css/my-account-view.css', array(), '1.0.0' );
+
+//    wp_enqueue_style( 'register-view-style', get_stylesheet_directory_uri() . '/css/register-view.css', array(), '1.0.0' );
+
 
     wp_enqueue_style( 'product-custom-style', get_stylesheet_directory_uri() . '/css/product-view.css' , array(), '1.1.11' );
     wp_enqueue_style( 'single-product-custom-style', get_stylesheet_directory_uri() . '/css/single-product-view.css' , array(), '1.1.12' );
