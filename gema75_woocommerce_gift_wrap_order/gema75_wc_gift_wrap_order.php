@@ -361,7 +361,7 @@ if (in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', ge
 				break;
 		}
 		//edited --->
-	    add_action('woocommerce_after_checkout_form' , 'gema75_add_gift_wrap_to_order', 100);
+	    //add_action('woocommerce_after_checkout_form' , 'gema75_add_gift_wrap_to_order', 100);
 
 		function gema75_add_gift_wrap_to_order(){
 			
