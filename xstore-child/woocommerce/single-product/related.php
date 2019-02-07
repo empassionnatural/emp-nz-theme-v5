@@ -23,6 +23,7 @@ $product_addon = get_post_meta( $product->get_id(), '_empdev_display_addon_produ
 $package_deals = has_term( 'package-deals', 'product_cat', 'uncategorised', $product->get_id() );
 
 if( $product_addon ){
+
 	$addon_products_ids = get_option( 'empdev_enable_addon_checkout', false );
 
 	$exclude_product_addon_ids = get_option( 'empdev_enable_addon_checkout_hide', false );
@@ -58,8 +59,9 @@ if( $product_addon ){
 		'echo' 			  => true,
 		'autoheight' 	  => false
 	);
-
-	etheme_slider( $args, 'product', $slider_args );
+	$columns = etheme_get_option('related_columns');
+	etheme_products($args, false, $columns);
+	//etheme_slider( $args, 'product', $slider_args );
 
 	echo '</div>';
 
