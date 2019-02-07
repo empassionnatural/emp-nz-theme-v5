@@ -50,10 +50,9 @@ function empdev_custom_scripts_frontend(){
 
     wp_enqueue_style( 'myaccount-style', get_stylesheet_directory_uri() . '/css/my-account-view.css', array(), '1.0.0' );
 
-//    wp_enqueue_style( 'register-view-style', get_stylesheet_directory_uri() . '/css/register-view.css', array(), '1.0.0' );
+    wp_enqueue_style( 'register-view-style', get_stylesheet_directory_uri() . '/css/register-view.css', array(), '1.0.0' );
 
-
-    wp_enqueue_style( 'product-custom-style', get_stylesheet_directory_uri() . '/css/product-view.css' , array(), '1.1.11' );
+    wp_enqueue_style( 'product-custom-style', get_stylesheet_directory_uri() . '/css/product-view.css' , array(), '1.2.0' );
     wp_enqueue_style( 'single-product-custom-style', get_stylesheet_directory_uri() . '/css/single-product-view.css' , array(), '1.1.12' );
 	wp_enqueue_script( 'custom-script', get_stylesheet_directory_uri() . '/js/custom-script.js', array('jquery'), '1.6.10', false );
 
