@@ -9,6 +9,11 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
+if( class_exists( 'WWP_Wholesale_Prices' ) ){
+    $wholesale_class = EMPDEV_WWPP_Wholesale_Price_Requirement::$on_wholesale;
+}
+
+$user = wp_get_current_user();
 ?>
 <?php if ( etheme_get_option('cart_special_breadcrumbs') ) : ?>
 	
@@ -196,6 +201,7 @@ do_action( 'woocommerce_before_cart' );
 	</div>
 
     <div class="col-md-6 add-coupon-code">
+        <?php  if( ! in_array( 'wholesale_customer', $user->roles ) ) : ?>
             <div class="col-md-12 col-sm-12 text-left mob-center">
                 <form class="checkout_coupon" method="post">
                     <h3 class="coupon-title"><?php esc_html_e('Apply Promo Code or Gift Coupon', 'xstore'); ?></h3>
@@ -209,10 +215,10 @@ do_action( 'woocommerce_before_cart' );
                     <input type="submit" class="btn" name="apply_coupon" value="<?php esc_attr_e('Apply', 'xstore'); ?>" />
                 </form>
                 <div class="giftwrapper">
-	                <?php do_action('woocommerce_cart_giftwrap'); ?>
+                    <?php do_action('woocommerce_cart_giftwrap'); ?>
                 </div>
-
             </div>
+        <?php endif; ?>
     </div>
 
 	<div class="col-md-6 cart-order-details">

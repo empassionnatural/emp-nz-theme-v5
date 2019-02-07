@@ -150,6 +150,7 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', wc_get_checko
         </div>
 
         <div class="add-coupon-code">
+            <?php  if( ! in_array( 'wholesale_customer', $user->roles ) ) : ?>
                 <div class="col-md-12 col-sm-12 text-left mob-center">
                     <form class="checkout_coupon" method="post" style="display: block !important;">
                         <h3 class="coupon-title"><?php esc_html_e('Apply Promo Code or Gift Coupon', 'xstore'); ?></h3>
@@ -161,10 +162,12 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', wc_get_checko
                         </div>
                         <input type="submit" class="btn" name="apply_coupon" value="<?php esc_attr_e('Apply', 'xstore'); ?>" />
                     </form>
+                    <div class="giftwrapper">
+                        <?php do_action('woocommerce_cart_giftwrap'); ?>
+                    </div>
                 </div>
+            <?php endif; ?>
         </div>
-
-        <?php do_action( 'woocommerce_after_checkout_form', $checkout ); ?>
 
     </div>
 
@@ -262,3 +265,4 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', wc_get_checko
 
     </div>
 
+<?php do_action( 'woocommerce_after_checkout_form', $checkout ); ?>
