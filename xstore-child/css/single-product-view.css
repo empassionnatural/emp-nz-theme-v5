@@ -163,12 +163,11 @@
     font-size: 22.5px;
 }
 .single-product-sidebar .textwidget .products-title span {
-    display: none;
-}
-.single-product-sidebar .textwidget h3 {
+    text-align: left;
     font-size: 15px;
     font-weight: bold;
 }
+
 @media (max-width:1024px) {
     .single-product-sidebar .custom-html-widget .row.products-loop .wishlist-disabled.status-publish .content-product .text-center.product-details span.posted_in {
         width: 100% !important;

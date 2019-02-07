@@ -86,16 +86,29 @@ div.product-image-wrapper .stock.out-of-stock {
 .text-center.product-details span.price span.amount {
     color: black;
 }
-.text-center.product-details span.price del span.amount , div.price .original-computed-price span.amount {
-    font-size: 13px;
-    color: #888888;
-    font-weight: normal;
-}
-.single-product-default .product-content .price .wholesale_price_container ins span.woocommerce-Price-amount.amount ,.single-product-default .product-content  .price span.woocommerce-Price-amount.amount {
+.single-product-default .product-content .price .wholesale_price_container ins span.woocommerce-Price-amount.amount  {
     font-size: 31px;
     color: black;
     font-weight: bold;
 }
+.single-product-default .product-content  .product-information .price {
+    margin-bottom: 20px !important;
+}
+.single-product-default .product-content  .price ins .amount {
+    font-weight: bold;
+}
+.single-product-default .product-content  .price del span.woocommerce-Price-amount.amount {
+    font-size: 21px;
+}
+.single-product-default .product-content  .price span.woocommerce-Price-amount.amount {
+    font-size: 24px;
+    color: #888888;
+}
+.text-center.product-details span.price del span.amount , div.price .original-computed-price span.amount {
+     font-size: 13px;
+     color: #888888;
+     font-weight: normal;
+ }
 .text-center.product-details span.price {
     width: 100%;
     float: left;
