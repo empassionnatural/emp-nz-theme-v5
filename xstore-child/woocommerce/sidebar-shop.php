@@ -11,7 +11,7 @@ if( etheme_get_option( 'shop_sticky_sidebar' ) ) {
 
 ?>
 
-<div class="<?php echo esc_attr( $l['sidebar-class'] ); ?> sidebar sidebar-<?php echo esc_attr( $l['sidebar'] ); ?> <?php echo (etheme_get_option('shop_sidebar_hide_mobile')) ? 'hidden-xs' : '' ; echo (!etheme_get_option('first_catItem_opened')) ? ' first-category-closed' : '' ?>">
+<div class="sidebaer-me <?php echo esc_attr( $l['sidebar-class'] ); ?> sidebar sidebar-<?php echo esc_attr( $l['sidebar'] ); ?> <?php echo (etheme_get_option('shop_sidebar_hide_mobile')) ? 'hidden-xs' : '' ; echo (!etheme_get_option('first_catItem_opened')) ? ' first-category-closed' : '' ?>">
     <?php if(!function_exists('dynamic_sidebar') || !dynamic_sidebar('shop-sidebar')):
 
         if(!class_exists('WooCommerce')) return;

@@ -125,10 +125,10 @@ table.cart thead th {
 /*{*/
 /*    height: 63px;    */
 /*}*/
-.cart-collaterals .order-summary .shop_table tr.cart-subtotal-wholesale.off-wholesale th {
+.cart-collaterals .order-summary .shop_table tr.cart-subtotal-wholesale th {
     padding-bottom: 23px !important;
 }
-.cart-collaterals .order-summary .shop_table tr.cart-subtotal-wholesale.off-wholesale th, .cart-collaterals .order-summary .shop_table tr.cart-subtotal-wholesale.off-wholesale td {
+.cart-collaterals .order-summary .shop_table tr.cart-subtotal-wholesale th, .cart-collaterals .order-summary .shop_table tr.cart-subtotal-wholesale td {
     padding-top: 23px !important;
 }
 .cart-collaterals .order-summary .shop_table .order-total
