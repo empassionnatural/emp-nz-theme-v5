@@ -14,6 +14,7 @@ if( class_exists( 'WWP_Wholesale_Prices' ) ){
 }
 
 $user = wp_get_current_user();
+
 ?>
 <?php if ( etheme_get_option('cart_special_breadcrumbs') ) : ?>
 	
