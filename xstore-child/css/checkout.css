@@ -164,6 +164,7 @@ h3.header-title {
 .left-form .order-review tbody tr td, .left-form .order-review tfoot tr th, .left-form .order-review tfoot tr td  {
     padding-left: 15px !important;
     padding-right: 15px !important;
+    width: 114px !important;
 }
 .left-form .order-review tfoot tr th, .left-form .order-review tfoot tr td  {
     color: #4d4d4d;
@@ -272,6 +273,9 @@ h3.header-title {
 }
 .payment_box #stripe-payment-data #wc-stripe-cc-form .form-row input#stripe-card-cvc {
     display: -webkit-box;
+}
+.woocommerce-checkout-review-order-table tfoot tr.order-total small.includes_tax {
+    display: block !important;
 }
 @media (max-width:1024px) {
     /*.left-form #gemagiftfront ul {*/

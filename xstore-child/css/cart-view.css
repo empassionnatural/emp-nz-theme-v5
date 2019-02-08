@@ -53,6 +53,7 @@ table tr:first-child td.product-details,table tr:first-child td.product-price,ta
 }
 .woocommerce-cart .template-content .content-page .woocommerce .cart-order-details {
     padding-left: 5px !important;
+    float: right;
 }
 .woocommerce-cart .template-content .content-page .woocommerce .woocommerce .add-coupon-code {
     padding-right: 5px !important;
@@ -77,7 +78,7 @@ table.cart thead th {
 .col-md-6.add-coupon-code .mob-center {
     background-repeat: repeat;
     background-image: url('https://staging.empassion.co.nz/wp-content/uploads/2019/01/coupon-bg.png');
-    height: 293px;
+    height: 463px;
     border: 1px solid #e1e1e1;
     background-color: #f2f2f2;
 }
@@ -113,6 +114,9 @@ table.cart thead th {
 .cart-collaterals .order-summary .shop_table tr td {
     color: #4d4d4d;
 }
+.cart-collaterals .order-summary .shop_table tr.cart-subtotal-wholesale.off-wholesale , .cart-collaterals .order-summary .shop_table tr.shipping.wholesale-shipping {
+    height: 45px;
+}
 .cart-collaterals .order-summary .shop_table tr {
     height: 35px;
 }
@@ -121,6 +125,12 @@ table.cart thead th {
 /*{*/
 /*    height: 63px;    */
 /*}*/
+.cart-collaterals .order-summary .shop_table tr.cart-subtotal-wholesale.off-wholesale th {
+    padding-bottom: 23px !important;
+}
+.cart-collaterals .order-summary .shop_table tr.cart-subtotal-wholesale.off-wholesale th, .cart-collaterals .order-summary .shop_table tr.cart-subtotal-wholesale.off-wholesale td {
+    padding-top: 23px !important;
+}
 .cart-collaterals .order-summary .shop_table .order-total
 {
     height: 50px;
@@ -145,7 +155,12 @@ table.cart thead th {
     margin-left: 0px;
     margin-right: 0px;
 }
-
+.cart-subtotal-wholesale .wholesale-amount {
+    text-decoration: unset !important;
+}
+.off-wholesale .orginal-amount {
+    text-decoration: line-through !important;
+}
 table.cart .product-subtotal .amount {
     color: black;
     font-size: 15px;
@@ -189,10 +204,20 @@ table.shop_table tbody tr.cart_item {
     color: #88af2c;
 }
 .col-md-6.add-coupon-code {
-    height: 299px;
+    height: 463px;
+    margin-bottom: 15px;
 }
 .woocommerce form .form-row select, .woocommerce-page form .form-row select {
     padding-left: 16px !important;
+}
+.posts-nav-btn .price .wholesale_price_title {
+    display: none;
+}
+.page-heading a, .page-heading .woocommerce-breadcrumb, .page-heading #breadcrumb {
+    color: #363636 !important;
+}
+#gemagiftfront {
+    width: 100% !important;
 }
 @media (max-width:1024px) {
     .return-shop.button.alt {
@@ -209,6 +234,7 @@ table.shop_table tbody tr.cart_item {
     .woocommerce-cart .template-content .content-page .woocommerce .cart-order-details {
         padding-right: 15px !important;
         padding-left: 15px !important;
+        width: 100% !important;
     }
     .return-shop.button.alt {
         line-height: 2.7;
