@@ -5,6 +5,14 @@
 	<meta name="viewport" content="user-scalable=1, width=device-width, initial-scale=1, maximum-scale=2.0"/>
 	<?php wp_head(); ?>
     <style>
+        /*Loader*/
+        .show-quickly .loader-circular{
+            width: 70px;
+        }
+        .show-quickly .loader-circular{
+            left: calc(50% - 40px);
+            top: calc(50% - 40px);
+        }
         /*Giftwrap*/
         .giftwrapper #gemagiftfront{
             width: 100%;
