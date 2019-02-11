@@ -6,8 +6,17 @@
  * @package 	WooCommerce/Templates
  * @version     3.5.0
  */
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
+if( class_exists( 'WWP_Wholesale_Prices' ) ){
+    $wholesale_class = EMPDEV_WWPP_Wholesale_Price_Requirement::$on_wholesale;
+}
+
+$user = wp_get_current_user();
+
+
+
+?>
 <?php if ( etheme_get_option('cart_special_breadcrumbs') ) : ?>
 <div class="cart-checkout-nav">
 <a href="<?php echo wc_get_cart_url(); ?>" class="active"> <?php esc_html_e('Shopping cart', 'xstore'); ?></a>
@@ -153,8 +162,9 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', wc_get_checko
 
         </div>
 
+        <?php  if( ! in_array( 'wholesale_customer', $user->roles ) ) { ?>
         <div class="add-coupon-code">
-            <?php  if( ! in_array( 'wholesale_customer', $user->roles ) ) : ?>
+
                 <div class="col-md-12 col-sm-12 text-left mob-center">
                     <form class="checkout_coupon" method="post" style="display: block !important;">
                         <h3 class="coupon-title"><?php esc_html_e('Apply Promo Code or Gift Coupon', 'xstore'); ?></h3>
@@ -170,8 +180,9 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', wc_get_checko
                         <?php do_action('woocommerce_cart_giftwrap'); ?>
                     </div>
                 </div>
-            <?php endif; ?>
+
         </div>
+        <?php } ?>
 
     </div>
 

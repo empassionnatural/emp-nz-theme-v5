@@ -22,7 +22,7 @@ if( etheme_get_option( 'shop_sticky_sidebar' ) ) {
             'widget_id' => 'woocommerce_product_categories',
             'before_widget' => '<div id="product_categories-1" class="sidebar-widget widget_product_categories widget_onsale">',
             'after_widget' => '</div><!-- //sidebar-widget -->',
-            'before_title' => '<h4 class="widget-title">',
+            'before_title' => '<h4 id="accordion-cat" class="widget-title">',
             'after_title' => '</h4>'
         );
 

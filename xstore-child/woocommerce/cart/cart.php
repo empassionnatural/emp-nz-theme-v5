@@ -14,6 +14,7 @@ if( class_exists( 'WWP_Wholesale_Prices' ) ){
 }
 
 $user = wp_get_current_user();
+
 ?>
 <?php if ( etheme_get_option('cart_special_breadcrumbs') ) : ?>
 	
@@ -201,26 +202,26 @@ do_action( 'woocommerce_before_cart' );
 		</form>
 	</div>
 
-    <div class="col-md-6 add-coupon-code">
-        <?php  if( ! in_array( 'wholesale_customer', $user->roles ) ) : ?>
-            <div class="col-md-12 col-sm-12 text-left mob-center">
-                <form class="checkout_coupon" method="post">
-                    <h3 class="coupon-title"><?php esc_html_e('Apply Promo Code or Gift Coupon', 'xstore'); ?></h3>
-                    <div class="coupon" style="display: block;">
+    <?php  if( ! in_array( 'wholesale_customer', $user->roles ) ) : ?>
+        <div class="col-md-6 add-coupon-code">
+                <div class="col-md-12 col-sm-12 text-left mob-center">
+                    <form class="checkout_coupon" method="post">
+                        <h3 class="coupon-title"><?php esc_html_e('Apply Promo Code or Gift Coupon', 'xstore'); ?></h3>
+                        <div class="coupon" style="display: block;">
 
-                        <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_html_e( 'Coupon code', 'xstore' ); ?>" />
-                        <!-- <input type="submit" class="btn" name="apply_coupon" value="&#9166;" /> -->
-                        <?php do_action('woocommerce_cart_coupon'); ?>
+                            <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_html_e( 'Coupon code', 'xstore' ); ?>" />
+                            <!-- <input type="submit" class="btn" name="apply_coupon" value="&#9166;" /> -->
+                            <?php do_action('woocommerce_cart_coupon'); ?>
 
+                        </div>
+                        <input type="submit" class="btn" name="apply_coupon" value="<?php esc_attr_e('Apply', 'xstore'); ?>" />
+                    </form>
+                    <div class="giftwrapper">
+                        <?php do_action('woocommerce_cart_giftwrap'); ?>
                     </div>
-                    <input type="submit" class="btn" name="apply_coupon" value="<?php esc_attr_e('Apply', 'xstore'); ?>" />
-                </form>
-                <div class="giftwrapper">
-                    <?php do_action('woocommerce_cart_giftwrap'); ?>
                 </div>
-            </div>
-        <?php endif; ?>
-    </div>
+        </div>
+    <?php endif; ?>
 
 	<div class="col-md-6 cart-order-details">
 		<div class="cart-collaterals">
