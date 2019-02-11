@@ -32,12 +32,13 @@ $user = wp_get_current_user();
 endif;
 
 
-
 do_action( 'woocommerce_before_cart' );
 
 
-
 ?>
+
+<?php wc_print_notices(); ?>
+
 
 <div class="row">
 

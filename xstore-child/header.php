@@ -22,8 +22,11 @@
             margin: auto;
             float: none;
         }
+        .woocommerce-checkout .giftwrapper #gemagiftfront{
+            max-width: 100%;
+        }
         .giftwrapper #gemagiftfront ul li{
-            display: inline-block;
+            display: inline-table;
             float: none;
         }
         .giftwrapper #gemagiftfront form{
