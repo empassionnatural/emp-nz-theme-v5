@@ -1,3 +1,9 @@
+.woocommerce-info {
+    margin-top: 22px;
+}
+.woocommerce-checkout .template-container .container .content {
+    padding-bottom: 50px;
+}
 .shop_table .amount {
     color: #4d4d4d;
 }
@@ -118,7 +124,7 @@ h3.header-title {
     color: white;
 }
 /*cart ----------*/
-.left-form .order-summary-form .order-review .header-title.step-title, .right-form .header-title.step-title {
+.left-form .order-summary-form .order-review .header-title.step-title, .right-form .header-title.step-title, .header-details .header-title.step-title {
     padding-top: 0px;
     padding-bottom: 0px;
     height: 61px;
@@ -161,10 +167,23 @@ h3.header-title {
 .left-form .order-review table {
     margin-bottom: 0px;
 }
+/*.left-form .order-review tbody tr td, .left-form .order-review tfoot tr th, .left-form .order-review tfoot tr td  {*/
+    /*padding-left: 15px !important;*/
+    /*padding-right: 15px !important;*/
+    /*width: 114px !important;*/
+/*}*/
+.left-form .order-review tbody tr.cart_item .product-total {
+    display: block;
+    width: 106px;
+    float: right;
+}
 .left-form .order-review tbody tr td, .left-form .order-review tfoot tr th, .left-form .order-review tfoot tr td  {
     padding-left: 15px !important;
     padding-right: 15px !important;
-    width: 114px !important;
+}
+.left-form .order-review tfoot tr td label {
+    display: block !important;
+    width: 150px !important;
 }
 .left-form .order-review tfoot tr th, .left-form .order-review tfoot tr td  {
     color: #4d4d4d;
@@ -270,12 +289,95 @@ h3.header-title {
 }
 .woocommerce form .form-row select, .woocommerce-page form .form-row select {
     padding-left: 16px !important;
+    line-height: 1 !important;
+    color: #222224 !important;
 }
+.woocommerce form .form-row select option, .woocommerce-page form .form-row select option
+{
+    color: #222222 !important;
+}
+.woocommerce form .form-row select option:first-child, .woocommerce-page form .form-row select option:first-child
+{
+    color: #888 !important;
+}
+
 .payment_box #stripe-payment-data #wc-stripe-cc-form .form-row input#stripe-card-cvc {
     display: -webkit-box;
 }
 .woocommerce-checkout-review-order-table tfoot tr.order-total small.includes_tax {
     display: block !important;
+}
+/*------------------------------------ thankyou */
+.thank-you-page .transaction-details {
+    height: 137px;
+}
+.thank-you-page .address-details {
+    border-top: 2px solid #1e1e1e;
+    height: 285px;
+    background-color: #f2f2f2;
+}
+.woocommerce-order-overview-wrapper {
+    text-align: left;
+}
+.thank-you-page span.header-title , .thank-you-page span.footer-title  {
+    display: block;
+}
+.thank-you-page span.header-title {
+    font-size: 1.5em;
+}
+.thank-you-page .fa.fa-thumbs-o-up {
+    display: block;
+    border: none !important;
+    font-size: 3.6rem;
+    line-height: 1.5;
+    color: #79aa00;
+}
+.woocommerce-thankyou-order-received::before {
+    display: none;
+}
+.thank-you-page .address-details .col-md-6 {
+    padding-left: 30px;
+    padding-top: 30px;
+}
+.thank-you-page .transaction-details .col-md-6 {
+    height: 137px;
+    padding-top: 33px;
+    background-color: #f2f2f2;
+    padding-left: 30px;
+}
+.thank-you-page .transaction-details .col-md-6 p {
+    text-align: left;
+    margin-bottom: 0px;
+}
+.header-details .header-title.step-title {
+    background-color: #e6e6e6;
+}
+.thank-you-page .woocommerce-thankyou-order-received {
+    text-transform: unset !important;
+}
+.woocommerce-order-received:not(.boxed) .woocommerce-customer-details {
+    display: none;
+}
+.thank-you-page .woocommerce-order-overview-wrapper {
+    width: 60%;
+    margin: 0px auto 20px !important;
+}
+.order_details thead th {
+    font-weight: bolder;
+    font-size: 15px;
+}
+.order_details tfoot th ,.order_details tfoot td , .order_details tbody td , .order_details thead th {
+    padding-left: 1em !important;
+    padding-right: 1em !important;
+}
+.order_details thead {
+    background-color: #e6e6e6;
+}
+.order_details tbody, .order_details tfoot {
+    background-color: #f2f2f2;
+}
+.woocommerce-order-details__title {
+    margin-bottom: 18px;
 }
 @media (max-width:1024px) {
     /*.left-form #gemagiftfront ul {*/

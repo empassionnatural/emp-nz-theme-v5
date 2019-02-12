@@ -45,7 +45,7 @@ function empdev_custom_scripts_frontend(){
     //wp_enqueue_style( 'fontawesome-css-style', 'https://use.fontawesome.com/releases/v5.5.0/css/all.css' , array(), '1.1.9' );
 	wp_enqueue_style( 'custom-style', get_stylesheet_directory_uri() . '/css/custom-style.css', array(), '3.2.1' );
     wp_enqueue_style( 'cart-style', get_stylesheet_directory_uri() . '/css/cart-view.css', array(), '1.0.5' );
-    wp_enqueue_style( 'checkout-style', get_stylesheet_directory_uri() . '/css/checkout.css', array(), '1.0.1' );
+    wp_enqueue_style( 'checkout-style', get_stylesheet_directory_uri() . '/css/checkout.css', array(), '1.1.3' );
 
 
     wp_enqueue_style( 'myaccount-style', get_stylesheet_directory_uri() . '/css/my-account-view.css', array(), '1.0.1' );
