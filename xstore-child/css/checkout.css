@@ -312,7 +312,7 @@ h3.header-title {
     height: 137px;
 }
 .thank-you-page .address-details {
-    border-top: 2px solid black;
+    border-top: 2px solid #1e1e1e;
     height: 285px;
     background-color: #f2f2f2;
 }
@@ -355,7 +355,30 @@ h3.header-title {
 .thank-you-page .woocommerce-thankyou-order-received {
     text-transform: unset !important;
 }
-
+.woocommerce-order-received:not(.boxed) .woocommerce-customer-details {
+    display: none;
+}
+.thank-you-page .woocommerce-order-overview-wrapper {
+    width: 60%;
+    margin: 0px auto 20px !important;
+}
+.order_details thead th {
+    font-weight: bolder;
+    font-size: 15px;
+}
+.order_details tfoot th ,.order_details tfoot td , .order_details tbody td , .order_details thead th {
+    padding-left: 1em !important;
+    padding-right: 1em !important;
+}
+.order_details thead {
+    background-color: #e6e6e6;
+}
+.order_details tbody, .order_details tfoot {
+    background-color: #f2f2f2;
+}
+.woocommerce-order-details__title {
+    margin-bottom: 18px;
+}
 @media (max-width:1024px) {
     /*.left-form #gemagiftfront ul {*/
     /*    margin: 0px 18px;*/
