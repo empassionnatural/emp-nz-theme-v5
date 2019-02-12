@@ -94,19 +94,25 @@ div.product-image-wrapper .stock.out-of-stock {
 .single-product-default .product-content  .product-information .price {
     margin-bottom: 20px !important;
 }
+.price ins .amount {
+    color: #333 !important;
+    font-weight: bold !important;
+}
 .single-product-default .product-content  .price ins .amount {
     font-weight: bold;
 }
 .single-product-default .product-content  .price del span.woocommerce-Price-amount.amount {
     font-size: 21px;
+    color: #888888 !important;
 }
-.single-product-default .product-content  .price span.woocommerce-Price-amount.amount {
+.single-product-default .product-content .price span.woocommerce-Price-amount.amount {
     font-size: 24px;
-    color: #888888;
+    color: #333;
+    font-weight: bold;
 }
 .text-center.product-details span.price del span.amount , div.price .original-computed-price span.amount {
      font-size: 13px;
-     color: #888888;
+     color: #888888 !important;
      font-weight: normal;
  }
 .text-center.product-details span.price {
@@ -309,6 +315,7 @@ div.product-to-cart, div.product_meta, div.product-desc {
 }
 .quick-view-layout-default div.quick-view-info div.price .woocommerce-price-suffix , p.price .woocommerce-price-suffix{
     display: inline !important;
+    font-size: 13px  !important;
 }
 .quick-view-layout-default div.quick-view-info div.price del.original-computed-price .woocommerce-price-suffix, span.price del.original-computed-price .woocommerce-price-suffix ,
 p.price del.original-computed-price small.woocommerce-price-suffix {

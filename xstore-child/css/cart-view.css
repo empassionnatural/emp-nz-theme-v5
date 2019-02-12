@@ -78,7 +78,7 @@ table.cart thead th {
 .col-md-6.add-coupon-code .mob-center {
     background-repeat: repeat;
     background-image: url('https://staging.empassion.co.nz/wp-content/uploads/2019/01/coupon-bg.png');
-    height: 463px;
+    height: 510px;
     border: 1px solid #e1e1e1;
     background-color: #f2f2f2;
 }
@@ -204,7 +204,7 @@ table.shop_table tbody tr.cart_item {
     color: #88af2c;
 }
 .col-md-6.add-coupon-code {
-    height: 463px;
+    height: 510px;
     margin-bottom: 15px;
 }
 .woocommerce form .form-row select, .woocommerce-page form .form-row select {

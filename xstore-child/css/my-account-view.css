@@ -177,6 +177,9 @@ form.login .button:hover {
 .woocommerce-MyAccount-content {
     margin-bottom: 30px !important;
 }
+.woocommerce-MyAccount-navigation, .woocommerce-MyAccount-content {
+    margin-bottom: 0px !important;
+}
 .woocommerce-MyAccount-navigation {
     margin-right: 0px;
 }
@@ -192,7 +195,7 @@ form.login .button:hover {
     width: 100%;
 }
 .woocommerce-MyAccount-navigation li.woocommerce-MyAccount-navigation-link--customer-logout {
-    padding-top: 108px;
+    padding-top: 305px;
     padding-bottom: 15px;
 }
 .woocommerce-MyAccount-navigation li.is-active a {

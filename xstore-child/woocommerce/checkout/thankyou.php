@@ -35,7 +35,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <?php endif; ?>
 
-<div class="woocommerce-order">
+<div class="woocommerce-order thank-you-page">
 
 	<?php if ( $order ) : ?>
 
@@ -52,42 +52,63 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<?php else : ?>
 
-			<p class="woocommerce-notice woocommerce-notice--success woocommerce-thankyou-order-received"><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', __( 'Thank you. Your order has been received.', 'xstore' ), $order ); ?></p>
+			<p class="woocommerce-notice woocommerce-notice--success woocommerce-thankyou-order-received"><span class="header-title">Order Successful!</span><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                <?php echo apply_filters( 'woocommerce_thankyou_order_received_text', __( 'Your order has been received.', 'xstore' ), $order ); ?><span class="footer-title">Thank you for choosing Empassion Natural!</span></p>
 
 			<div class="woocommerce-order-overview-wrapper">
 
-				<ul class="woocommerce-order-overview woocommerce-thankyou-order-details order_details">
+                <div class="header-details">
+                    <h3 class="header-title step-title">Transaction Details</h3>
+                </div>
+                <div class="transaction-details">
+                    <div class="col-md-6">
+                        <p class="order">
+                            <?php esc_html_e( 'Order number:', 'xstore' ); ?>
+                            <strong><?php echo wp_kses_post($order->get_order_number()); ?></strong>
+                        </p>
+                        <p class="date">
+                            <?php esc_html_e( 'Date:', 'xstore' ); ?>
+                            <strong><?php echo wc_format_datetime( $order->get_date_created() ); ?></strong>
+                        </p>
+                        <p class="email">
+                            <?php esc_html_e( 'Email:', 'xstore' ); ?>
+                            <strong><?php echo wp_kses_post($order->get_billing_email()); ?></strong>
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="total">
+                            <?php esc_html_e( 'Total:', 'xstore' ); ?>
+                            <strong><?php echo wp_kses_post($order->get_formatted_order_total()); ?></strong>
+                        </p>
+                        <p class="method">
+                            <?php esc_html_e( 'Payment method:', 'xstore' ); ?>
+                            <strong><?php echo wp_kses_post( $order->get_payment_method_title() ); ?></strong>
+                        </p>
+                    </div>
+                </div>
+                <div class="address-details">
+                    <div class="col-md-6">
+                        <h2 class="woocommerce-column__title"><?php esc_html_e( 'Billing address', 'woocommerce' ); ?></h2>
 
-					<li class="woocommerce-order-overview__order order">
-						<?php esc_html_e( 'Order number:', 'xstore' ); ?>
-						<strong><?php echo wp_kses_post($order->get_order_number()); ?></strong>
-					</li>
+                        <address>
+                            <?php echo wp_kses_post( $order->get_formatted_billing_address( __( 'N/A', 'woocommerce' ) ) ); ?>
 
-					<li class="woocommerce-order-overview__date date">
-						<?php esc_html_e( 'Date:', 'xstore' ); ?>
-						<strong><?php echo wc_format_datetime( $order->get_date_created() ); ?></strong>
-					</li>
+                            <?php if ( $order->get_billing_phone() ) : ?>
+                                <p class="woocommerce-customer-details--phone"><?php echo esc_html( $order->get_billing_phone() ); ?></p>
+                            <?php endif; ?>
 
-					<?php if ( is_user_logged_in() && $order->get_user_id() === get_current_user_id() && $order->get_billing_email() ) : ?>
-						<li class="woocommerce-order-overview__email email">
-							<?php esc_html_e( 'Email:', 'xstore' ); ?>
-							<strong><?php echo wp_kses_post($order->get_billing_email()); ?></strong>
-						</li>
-					<?php endif; ?>
-
-					<li class="woocommerce-order-overview__total total">
-						<?php esc_html_e( 'Total:', 'xstore' ); ?>
-						<strong><?php echo wp_kses_post($order->get_formatted_order_total()); ?></strong>
-					</li>
-
-					<?php if ( $order->get_payment_method_title() ) : ?>
-						<li class="woocommerce-order-overview__payment-method method">
-							<?php esc_html_e( 'Payment method:', 'xstore' ); ?>
-							<strong><?php echo wp_kses_post( $order->get_payment_method_title() ); ?></strong>
-						</li>
-					<?php endif; ?>
-
-				</ul>
+                            <?php if ( $order->get_billing_email() ) : ?>
+                                <p class="woocommerce-customer-details--email"><?php echo esc_html( $order->get_billing_email() ); ?></p>
+                            <?php endif; ?>
+                        </address>
+                    </div>
+                    <div class="col-md-6">
+                        <h2 class="woocommerce-column__title"><?php esc_html_e( 'Shipping address', 'woocommerce' ); ?></h2>
+                        <address>
+                            <?php echo wp_kses_post( $order->get_formatted_shipping_address( __( 'N/A', 'woocommerce' ) ) ); ?>
+                        </address>
+                    </div>
+                </div>
 
 			</div>
 
