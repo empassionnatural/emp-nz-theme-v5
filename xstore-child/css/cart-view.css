@@ -78,7 +78,7 @@ table.cart thead th {
 .col-md-6.add-coupon-code .mob-center {
     background-repeat: repeat;
     background-image: url('https://staging.empassion.co.nz/wp-content/uploads/2019/01/coupon-bg.png');
-    height: 510px;
+    height: auto !important;
     border: 1px solid #e1e1e1;
     background-color: #f2f2f2;
 }
@@ -174,7 +174,7 @@ table.shop_table tbody tr.cart_item {
 .add-coupon-code .checkout_coupon {
     width: 69%;
     text-align: center;
-    margin: auto;
+    margin: 30.5px auto !important;
     padding-top: 70px;
 }
 .add-coupon-code .checkout_coupon .coupon-title {
@@ -204,7 +204,7 @@ table.shop_table tbody tr.cart_item {
     color: #88af2c;
 }
 .col-md-6.add-coupon-code {
-    height: 510px;
+    height: auto !important;
     margin-bottom: 15px;
 }
 .woocommerce form .form-row select, .woocommerce-page form .form-row select {

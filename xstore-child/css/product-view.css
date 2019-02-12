@@ -259,6 +259,9 @@ div.product-to-cart, div.product_meta, div.product-desc {
     opacity: 0.2;
 }
 /* quick view */
+.quick-view-layout-default .product-information .short-description {
+    display: flex !important;
+}
 .quick-view-layout-default .row .product-information .product-name {
     margin-bottom: 7px !important;
     font-size: 24px !important;
