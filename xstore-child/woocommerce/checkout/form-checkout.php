@@ -32,10 +32,14 @@ $user = wp_get_current_user();
 
 <?php endif; ?>
 
+    <div class="wc-notice">
+
     <?php wc_print_notices(); ?>
 
+    </div>
 
 <?php
+
 // If checkout registration is disabled and not logged in, the user cannot checkout
 if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_user_logged_in() ) {
 	echo esc_html( apply_filters( 'woocommerce_checkout_must_be_logged_in_message', __( 'You must be logged in to checkout.', 'xstore' ) ) );
