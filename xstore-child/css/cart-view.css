@@ -140,7 +140,7 @@ table.cart thead th {
 .cart-collaterals .order-summary .shop_table .order-total td strong {
     display: block;
     height: 33px;
-    line-height: 40px;
+    line-height: 60px;
 }
 .cart-collaterals .order-summary .shop_table .order-total td small {
     display: block;

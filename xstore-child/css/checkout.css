@@ -163,6 +163,7 @@ h3.header-title {
 #order_review-1 table tfoot .order-total td strong span.amount {
     font-size: 23px;
     color: #4d4d4d;
+    line-height: 51px;
 }
 .left-form .order-review table {
     margin-bottom: 0px;
