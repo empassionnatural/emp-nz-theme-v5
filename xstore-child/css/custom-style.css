@@ -15,6 +15,9 @@
   background-color: #cbcbcb;
 }
 /*top-bar highlights*/
+.link-signup {
+  margin-right: 0px !important;
+}
 .languages-area .topbar-widget {
   width: 100%;
 }

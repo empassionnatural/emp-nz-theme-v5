@@ -140,7 +140,7 @@ table.cart thead th {
 .cart-collaterals .order-summary .shop_table .order-total td strong {
     display: block;
     height: 33px;
-    line-height: 60px;
+    line-height: 40px;
 }
 .cart-collaterals .order-summary .shop_table .order-total td small {
     display: block;
@@ -218,6 +218,9 @@ table.shop_table tbody tr.cart_item {
 }
 #gemagiftfront {
     width: 100% !important;
+}
+.add-coupon-code .giftwrapper {
+    margin: 30.5px auto !important;
 }
 @media (max-width:1024px) {
     .return-shop.button.alt {
