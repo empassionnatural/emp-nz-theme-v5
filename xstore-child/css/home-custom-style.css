@@ -1,4 +1,9 @@
-
+.home .page-heading {
+    display: none;
+}
+.wpb_text_column.wpb_content_element {
+    margin-bottom: 35px !important;
+}
 .breadcrumbs-type-disable.et-header-not-overlap:not(.home) .header-wrapper {
     margin-bottom: 0px;
 }
@@ -779,7 +784,7 @@
     #bg-content-3.wpb_content_element {
         position: absolute;
         left: -94px;
-        top: -36px;
+        top: 0px;
         width: 683px;
     }
 

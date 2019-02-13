@@ -15,6 +15,9 @@
   background-color: #cbcbcb;
 }
 /*top-bar highlights*/
+.languages-area .topbar-widget {
+  width: 100%;
+}
 span.account-links {
   width: auto !important;
 }
