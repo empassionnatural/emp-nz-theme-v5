@@ -973,3 +973,115 @@ checkout-button {
     margin-left: 0;
   }
 }
+.product-ajax-list {
+  float: left;
+  display: block;
+  overflow: hidden;
+  width: 50%;
+  margin-bottom: 0;
+}
+.product-ajax-list li {
+  padding: 1.43em;
+  list-style-type: none;
+  float: left;
+  display: block;
+  width: 50%;
+  border-bottom: 1px solid #e6e6e6;
+  border-right: 1px solid #e6e6e6;
+}
+.product-ajax-list li:nth-child(2n+2) {
+  clear: both;
+}
+.product-ajax-list .product-list-image {
+  float: left;
+  display: block;
+}
+.product-ajax-list img {
+  max-width: 4.55rem;
+  margin-right: 20px;
+}
+.product-ajax-list .product-title {
+  display: block;
+  font-size: 0.9rem !important;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+.product-ajax-list .product-title a {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.product-ajax-list ul,
+.posts-ajax-list ul {
+  display: inline-block;
+  width: 100%;
+}
+.product-ajax-list li {
+  min-height: 134px;
+}
+.product-results-on .product-ajax-list {
+  width: 100%;
+}
+.product-results-on .product-ajax-list ul li {
+  width: 33.33%;
+}
+.product-results-on .product-ajax-list ul li:nth-child(3n+1) {
+  clear: both;
+}
+.product-results-on .product-ajax-list ul li:nth-child(2n+1) {
+  clear: none;
+}
+.posts-ajax-list {
+  float: left;
+  display: block;
+  overflow: hidden;
+  width: 50%;
+  margin-bottom: 0;
+}
+.posts-ajax-list li {
+  padding: 1.43em;
+  list-style-type: none;
+  float: left;
+  display: block;
+  width: 50%;
+  min-height: 134px;
+  border-bottom: 1px solid #e6e6e6;
+  border-right: 1px solid #e6e6e6;
+}
+.posts-ajax-list .post-title {
+  margin-bottom: 0;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+.posts-ajax-list .post-title a {
+  font-weight: bold;
+}
+.posts-ajax-list .post-list-image {
+  float: left;
+  display: block;
+}
+.posts-ajax-list img {
+  max-width: 5.0rem;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+.posts-ajax-list h4 {
+  display: block;
+  font-size: 1rem;
+}
+.posts-ajax-list h4 a {
+  text-transform: uppercase;
+}
+.post-results-on .posts-ajax-list {
+  width: 100%;
+}
+.post-results-on .posts-ajax-list ul li {
+  width: 33.33%;
+  min-height: 105px;
+}
+.post-results-on .posts-ajax-list ul li:nth-child(3n+1) {
+  clear: both;
+}
+.post-results-on .posts-ajax-list ul li:nth-child(2n+1) {
+  clear: none;
+}

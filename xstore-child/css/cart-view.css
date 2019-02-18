@@ -216,12 +216,13 @@ table.shop_table tbody tr.cart_item {
 .page-heading a, .page-heading .woocommerce-breadcrumb, .page-heading #breadcrumb {
     color: #363636 !important;
 }
+.add-coupon-code .giftwrapper {
+     margin: 30.5px auto !important;
+ }
 #gemagiftfront {
     width: 100% !important;
 }
-.add-coupon-code .giftwrapper {
-    margin: 30.5px auto !important;
-}
+
 @media (max-width:1024px) {
     .return-shop.button.alt {
         line-height: 2.8;
