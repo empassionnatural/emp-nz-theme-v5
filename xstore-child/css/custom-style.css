@@ -117,11 +117,11 @@ span.account-links {
   font-weight: bold;
   font-size: 15px;
   margin: 0 10px;
-  color: #4d4d4d;
+  color: #4d4d4d !important;
 }
 .contact-us .phone:hover,
 .email-us:hover {
-  color: #4d4d4d;
+  color: #222 !important;
 }
 .contact-us .time {
   font-size: 12px;
@@ -179,14 +179,15 @@ button.btn-disabled,
 }
 .link-signup {
   background: #84b316;
-  color: white;
+  color: white !important;
   padding: 5px 26px;
   border-radius: 5px;
   font-size: 15px;
   font-weight: bold;
 }
-.link-login:hover {
-  color: #8cc63f !important;
+
+.link-login:hover span {
+  color: #888888 !important;
 }
 .link-signup:hover {
   background-color: #8fc118;
@@ -809,6 +810,14 @@ checkout-button {
     line-height: 16px;
   }
 }
+
+
+
+/*Floating Button*/
+#id-floatingbutton {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .prod-highlight-col > .vc_column-inner > .wpb_wrapper {
     min-height: 314px;
@@ -862,6 +871,16 @@ checkout-button {
   }
 }
 @media (max-width: 480px) {
+  #id-floatingbutton.fbIn {
+    display: block !important;
+  }
+  #id-floatingbutton.fbOut {
+    display: none !important;
+  }
+  .back-top {
+    bottom: 165px !important;
+    right: 21px !important;
+  }
   .top-bar-info .col-sm-4 {
     width: 0;
     display: none;
@@ -973,6 +992,71 @@ checkout-button {
     margin-left: 0;
   }
 }
+.back-top {
+  bottom: 60px !important;
+}
+/*Fixed bugs woocommerce*/
+.shopping-container .cart-bag .badge-number{
+  background-color: #000;
+}
+.woocommerce-info b, .cart-popup .woocommerce-Price-amount{
+  color: #333;
+}
+.error-tr{
+  outline: 1px solid #b63231;
+}
+.quantity.buttons_added span:hover, table.cart .remove-item:hover,
+input[type=submit]:hover, .btn:hover, .back-top:hover, .button:hover,
+.swiper-entry .swiper-custom-left:hover, .swiper-entry .swiper-custom-right:hover {
+  background-color: #dadada;
+}
+.header-search.act-default [role=searchform] .btn:hover{
+  background-color: #4a4a4a !important;
+}
+table.cart .product-details a:hover, .cart-widget-products .remove:hover, .cart-widget-products a:hover, .shipping-calculator-button, .tabs .tab-title:hover, .next-post .post-info .post-title, .prev-post .post-info .post-title, .form-submit input[type=submit]{
+  color: #000 !important;
+}
+.form-submit input[type=submit]:hover{
+  color: white !important;
+}
+.shipping-calculator-button:hover{
+  text-decoration: underline;
+}
+.active.et-opened .tab-title.opened{
+  border: 1px solid #e6e6e6;
+}
+.posts-nav-btn:hover .button:before{
+  color: #cbcbcb;
+}
+#wc-stripe-payment-request-wrapper, #wc-stripe-payment-request-button-separator{
+  display: none !important;
+}
+::-moz-selection { background: #d2c5ff !important; }
+::selection { background: #d2c5ff !important; }
+
+
+div#id-floatingbutton {
+  opacity: 1;
+  visibility: visible;
+  z-index: 2147483639;
+  position: fixed;
+  bottom: 88px;
+  width: 62px;
+  height: 60px;
+  max-width: 100%;
+  max-height: calc(100% - 0px);
+  min-height: 0px;
+  min-width: 0px;
+  background-color: white;
+  border-radius: 50%;
+  border: 0px;
+  overflow: hidden;
+  right: 8px;
+  transition: none 0s ease 0s !important;
+  padding: 14px;
+  box-shadow: 2px 1px 12px rgba(0, 0, 0, 0.2);
+}
+
 .product-ajax-list {
   float: left;
   display: block;

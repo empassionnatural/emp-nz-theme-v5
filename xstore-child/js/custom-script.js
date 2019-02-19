@@ -120,3 +120,16 @@ var openAccordion = function(evt , id1 , id2) {
         x.style.maxHeight = null;
     }
 }
+
+var $win = $(window);
+
+$win.on('scroll', function () {
+    console.log($win.scrollTop());
+
+    if ($win.scrollTop() < 1) {
+        $('#id-floatingbutton').addClass('fbOut').removeClass('fbIn');
+    }
+    else {
+        $('#id-floatingbutton').addClass('fbIn').removeClass('fbOut');
+    }
+});
