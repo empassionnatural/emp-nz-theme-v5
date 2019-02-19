@@ -331,6 +331,13 @@ p.price del.original-computed-price small.woocommerce-price-suffix {
     font-size: 20px !important;
     position: relative !important;
 }
+
+.quick-view-info div.price p.price del span {
+    font-size: 18px !important;
+    color: #888888 !important;
+    font-weight: normal !important;
+}
+
 .product-information-inner .cart .qty-span {
     font-weight: bold;
     text-transform: capitalize;
@@ -495,7 +502,7 @@ i.icon::before {
         width: 145% !important;
         max-width: 439px !important;
     }
-    .wishlist-disabled.status-publish, .product-slide {
+    .wishlist-disabled.status-publish {
         width: 31% !important;
     }
     .text-center.product-details span.posted_in {
@@ -506,7 +513,7 @@ i.icon::before {
     }
 }
 @media (max-width:1199px) {
-    .products-loop.products-grid .wishlist-disabled.status-publish, .product-slide {
+    .products-loop.products-grid .wishlist-disabled.status-publish {
         width: 31% !important;
         max-height: 430px !important;
     }
@@ -539,13 +546,14 @@ i.icon::before {
     div.wishlist-disabled {
         width: 50% !important;
     }
-    .products-loop.products-grid .wishlist-disabled.status-publish , .product-slide  {
+    .products-loop.products-grid .wishlist-disabled.status-publish {
         max-height: 430px !important;
         height: auto;
         max-width: 679px !important;
         width: 48.5% !important;
     }
-    .wishlist-disabled.status-publish .content-product , .product-slide .content-product {
+
+    .wishlist-disabled.status-publish .content-product {
         margin-bottom: 15px !important;
     }
     .content-product span.show-quickly {
@@ -557,9 +565,12 @@ i.icon::before {
     .row-count-2 .product:nth-child(2n+1), .row-count-3 .product:nth-child(2n+1), .row-count-4 .product:nth-child(2n+1), .row-count-5 .product:nth-child(2n+1) {
         clear: none !important;
     }
+    /*.woocommerce-cart .container .related_prod_container .product-slide {*/
+        /*width: 32% !important;*/
+    /*}*/
 }
 @media (max-width:768px) {
-    .products-loop.products-grid .wishlist-disabled.status-publish , .product-slide  {
+    .products-loop.products-grid .wishlist-disabled.status-publish {
         max-width: 334px !important;
         width: 48.5% !important;
     }
@@ -573,20 +584,20 @@ i.icon::before {
     }
 }
 @media (max-width:725px) {
-    .products-loop.products-grid .wishlist-disabled.status-publish , .product-slide  {
+    .products-loop.products-grid .wishlist-disabled.status-publish {
         width: 48.4% !important;
     }
 }
 @media (max-width:683px) {
-    .products-loop.products-grid .wishlist-disabled.status-publish , .product-slide  {
+    .products-loop.products-grid .wishlist-disabled.status-publish {
         width: 48% !important;
     }
 }
 @media (max-width:602px) {
-    .product-slide  {
-        max-width: 250px !important;
-        width: 100% !important;
-    }
+    /*.product-slide  {*/
+        /*max-width: 250px !important;*/
+        /*width: 100% !important;*/
+    /*}*/
     .button.product_type_simple {
         width: 203px !important;
         line-height: 1.4rem !important;
@@ -611,12 +622,12 @@ i.icon::before {
     .text-center.product-details div.star-rating {
         float: right !important;
     }
-    .products-loop.products-grid .wishlist-disabled.status-publish, .product-slide {
+    .products-loop.products-grid .wishlist-disabled.status-publish {
         max-height: 425px !important;
     }
 }
 @media (max-width:500px) {
-    .products-loop.products-grid .wishlist-disabled.status-publish , .product-slide  {
+    .products-loop.products-grid .wishlist-disabled.status-publish {
         width: 100% !important;
     }
 }
@@ -630,9 +641,12 @@ i.icon::before {
     .product-information .rating-link {
         max-width: 249px !important;
     }
+    /*.woocommerce-cart .container .related_prod_container .product-slide {*/
+        /*width: 100% !important;*/
+    /*}*/
 }
 @media (max-width: 375px) {
-    .products-loop.products-grid .wishlist-disabled.status-publish , .product-slide  {
+    .products-loop.products-grid .wishlist-disabled.status-publish {
         max-width: 303px !important;
         width: 100%;
     }

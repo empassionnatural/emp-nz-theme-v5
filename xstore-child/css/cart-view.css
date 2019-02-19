@@ -222,12 +222,33 @@ table.shop_table tbody tr.cart_item {
 #gemagiftfront {
     width: 100% !important;
 }
+/*related product*/
+.woocommerce-cart .container  .related_prod_container {
+    padding-bottom: 40px !important;
+}
+.woocommerce-cart .container .related_prod_container .product-slide span.show-quickly {
+    max-width: 282px !important;
+}
 
 @media (max-width:1024px) {
     .return-shop.button.alt {
         line-height: 2.8;
         padding: 0 !important;
         height: 48px;
+    }
+    .woocommerce-cart .container .related_prod_container .product-slide {
+        max-height: 430px !important;
+        height: auto;
+        max-width: 679px !important;
+        width: 24% !important;
+    }
+    .woocommerce-cart .container .related_prod_container .product-slide span.posted_in {
+        width: 50% !important;
+    }
+    .woocommerce-cart .container .related_prod_container .product-slide .button{
+        position: unset !important;
+        top: 0px !important;
+        display: table !important;
     }
 }
 @media (max-width:992px) {
@@ -248,6 +269,9 @@ table.shop_table tbody tr.cart_item {
     .col-md-6.add-coupon-code .mob-center , .return-shop.button.alt .button.alt   {
         margin-bottom: 5px !important;
     }
+    .woocommerce-cart .container .related_prod_container .product-slide {
+        width: 32% !important;
+    }
 }
 @media (max-width:768px) {
     .woocommerce-cart .template-content .content-page .woocommerce .woocommerce .add-coupon-code {
@@ -255,13 +279,20 @@ table.shop_table tbody tr.cart_item {
     }
     .woocommerce-cart .template-content .content-page .woocommerce .cart-order-details {
         padding-left: 15px !important;
-        height: 390px !important;
+        height: 500px !important;
+        max-height: 500px;
     }
     .cart .stock.in-stock {
         width: 30% !important;
     }
 }
 @media (max-width:480px) {
+    .woocommerce-cart .container .related_prod_container .product-slide {
+        width: 98% !important;
+    }
+    .woocommerce-cart .container .related_prod_container  h2.products-title {
+        line-height: 1 !important;
+    }
     .remove-item-mobile {
         top: 30px !important;
     }
