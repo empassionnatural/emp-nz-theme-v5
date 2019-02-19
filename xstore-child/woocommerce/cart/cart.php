@@ -33,6 +33,54 @@ $user = wp_get_current_user();
 endif;
 
 
+global $product, $woocommerce_loop;
+
+$addon_products_ids = get_option( 'empdev_enable_addon_checkout', false );
+
+$exclude_product_addon_ids = get_option( 'empdev_enable_addon_checkout_hide', false );
+
+$filter_addon_product_ids = $addon_products_ids;
+
+if( $exclude_product_addon_ids ){
+	$filter_addon_product_ids = array_diff( $addon_products_ids, $exclude_product_addon_ids );
+}
+
+if ( sizeof( $addon_products_ids ) == 0 || ! $addon_products_ids ) return;
+
+echo '<div class="rp-header related_prod_container et-blog">';
+
+echo '<h2 class="products-title"><span>' . esc_html__( 'Before you go, grab a Super Special!', 'xstore' ) . '</span></h2>';
+
+$args = array(
+	'post_type'           => 'product',
+	'ignore_sticky_posts' => 1,
+	'no_found_rows'       => 1,
+	'posts_per_page'      => 4,
+	'orderby'             => 'ID',
+	'post__in'            => $filter_addon_product_ids,
+);
+
+$slider_args = array(
+	'slider_type'        => true,
+	'slider_autoplay' => false,
+	'slider_speed'    => false,
+	'large' 		  => 4,
+	'notebook' 		  => 4,
+	'tablet_land' 	  => 3,
+	'tablet_portrait' => 2,
+	'mobile'          => 1,
+	'echo' 			  => true,
+	'autoheight' 	  => false,
+	'per_move'           => 1,
+);
+
+etheme_slider( $args, 'product', $slider_args );
+
+echo '</div>';
+
+wp_reset_postdata();
+
+
 do_action( 'woocommerce_before_cart' );
 
 
