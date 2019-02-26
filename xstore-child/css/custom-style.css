@@ -113,7 +113,7 @@ span.account-links {
   top: 2px;
 }
 .contact-us .phone,
-.email-us {
+.email-us , shipping-rate{
   font-weight: bold;
   font-size: 15px;
   margin: 0 10px;
@@ -595,7 +595,7 @@ checkout-button {
   margin-bottom: 10px;
 }
 .wholesale_customer .product-information .price {
-  margin-bottom: 0;
+  margin-bottom: 13px;
 }
 .product-information .woocommerce-price-suffix {
   margin-bottom: 5px;
@@ -718,6 +718,10 @@ checkout-button {
   }
 }
 @media (max-width: 1024px) {
+  .back-top {
+    bottom: 95px !important;
+    right: 21px !important;
+  }
   .menu-wrapper .menu > li > a {
     padding: 0.77em 1em;
   }
@@ -740,9 +744,9 @@ checkout-button {
   #rf-search-box {
     width: 200px !important;
   }
-  .header-search.act-default {
-    width: 10.5em;
-  }
+  /*.header-search.act-default {*/
+    /*width: 10.5em;*/
+  /*}*/
   .prod-highlight-wrapper {
     margin-top: 6px;
   }
@@ -811,7 +815,9 @@ checkout-button {
   }
 }
 
-
+.back-top {
+  bottom: 60px;
+}
 
 /*Floating Button*/
 #id-floatingbutton {
@@ -879,7 +885,6 @@ checkout-button {
   }
   .back-top {
     bottom: 165px !important;
-    right: 21px !important;
   }
   .top-bar-info .col-sm-4 {
     width: 0;
@@ -992,9 +997,7 @@ checkout-button {
     margin-left: 0;
   }
 }
-.back-top {
-  bottom: 60px !important;
-}
+
 /*Fixed bugs woocommerce*/
 .shopping-container .cart-bag .badge-number{
   background-color: #000;
@@ -1168,4 +1171,21 @@ div#id-floatingbutton {
 }
 .post-results-on .posts-ajax-list ul li:nth-child(2n+1) {
   clear: none;
+}
+price_slider_wrapper .ui-slider .ui-slider-handle, .woocommerce-pagination ul li .current, .woocommerce-pagination ul li a:hover {
+  background: #333;
+}
+
+a.no-click.active {
+  color: black;
+  font-weight: bold;
+}
+
+.cart-popup-footer{
+  font-weight: bold;
+}
+
+.sidebar-widget ul li.current-cat>a, .sidebar-widget ul li>ul.children li.current-cat>a {
+  color: #222;
+  font-weight: bold;
 }
