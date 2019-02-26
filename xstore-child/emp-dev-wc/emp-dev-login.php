@@ -146,7 +146,7 @@ function product_form($atts) {
     $html .= '<div class="overlay"><span></span></div>';
     $html .= '<div class="bg-color-txt-pic">
                 <img src="/wp-content/uploads/2019/02/icon_section_lavender.png">
-                <p>Lavander</p>
+                <p>Lavender</p>
               </div>';
     $html .= '</a>';
     $html .= '</div>';
