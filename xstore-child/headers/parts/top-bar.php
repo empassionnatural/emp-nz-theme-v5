@@ -2,7 +2,7 @@
 	<div class="top-bar topbar-color-<?php echo get_query_var( 'et_top-bar-color', 'dark' ); ?>">
 		<div class="container">
             <div class="row">
-                <div class="cols col-sm-4 col-md-6 col-lg-7">
+                <div class="cols col-sm-8 col-md-6 col-lg-4">
                     <div class="languages-area flex">
                         <?php etheme_shop_navbar( 'tb-left' ); ?>
                         <?php if((!function_exists('dynamic_sidebar') || !dynamic_sidebar('languages-sidebar'))): ?>
@@ -12,7 +12,7 @@
 	            <?php if ( is_active_sidebar('top-panel') && etheme_get_option('top_panel') ): ?>
                     <div class="top-panel-open"><span><?php esc_html_e('Open panel', 'xstore'); ?></span></div>
 	            <?php endif ?>
-                <div class="cols col-sm-8 col-md-6 col-lg-5">
+                <div class="cols col-sm-4 col-md-6 col-lg-4">
                     <div class="account-dropdown flex">
                         <!--<div class="top-links">
 

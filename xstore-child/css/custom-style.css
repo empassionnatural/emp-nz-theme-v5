@@ -825,6 +825,12 @@ checkout-button {
 }
 
 @media (max-width: 768px) {
+  .header-xstore .top-bar, .top-bar .languages-area {
+    display: flex;
+  }
+  .dropdown-toggle span.sel-desc {
+    display: none;
+  }
   .prod-highlight-col > .vc_column-inner > .wpb_wrapper {
     min-height: 314px;
   }
