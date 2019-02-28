@@ -171,8 +171,21 @@ function emddev_conditional_product_in_cart( $passed, $product_id, $quantity) {
 
 }
 
-if ( class_exists( 'WJECF_Wrap' ) ) {
 
+//add_filter( 'woocommerce_coupon_is_valid_for_cart', 'empdev_allow_exclude_product_ids', 100, 2 );
+
+function empdev_allow_exclude_product_ids( $coupon_type, $coupon ){
+
+//	$product_ids  = array( $product->get_id(), $product->get_parent_id() );
+	//var_dump($coupon->get_excluded_product_ids());
+	var_dump($coupon_type);
+	var_dump($coupon->get_code());
+
+}
+
+add_filter( 'woocommerce_coupon_is_valid', 'empdev_exclude_sale_free_products', 100, 2 );
+
+if ( class_exists( 'WJECF_Wrap' ) ) {
 	add_filter( 'woocommerce_coupon_is_valid', 'empdev_exclude_sale_free_products', 100, 2 );
 
 	function empdev_exclude_sale_free_products( $valid, $coupon ) {
@@ -180,6 +193,11 @@ if ( class_exists( 'WJECF_Wrap' ) ) {
 		$wrap_coupon          = WJECF_Wrap( $coupon );
 		$exclude_sales_items  = $wrap_coupon->get_meta( 'exclude_sale_items' );
 		$get_free_product_ids = WJECF_API()->get_coupon_free_product_ids( $coupon );
+		$excluded_product_ids  = $wrap_coupon->get_meta( 'excluded_product_ids' );
+
+		//var_dump( $coupon->get_excluded_product_ids() );
+		//var_dump( $coupon->get_code() );
+		//woocommerce_coupon_is_valid_for_product
 
 		$get_coupon_minimum_amount = $wrap_coupon->get_meta( 'minimum_amount' );
 

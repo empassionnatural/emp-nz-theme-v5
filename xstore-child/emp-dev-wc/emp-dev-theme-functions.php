@@ -499,3 +499,45 @@ function etheme_ajax_search_action() {
 	echo json_encode($result);
 	die();
 }
+
+/*Import Export Woo Users*/
+add_filter( 'hf_csv_customer_post_columns', 'empdev_hf_csv_customer_post_columns' );
+
+function empdev_hf_csv_customer_post_columns( $columns ){
+	$add_columns = array( 'birthday' => 'birthday' );
+
+	return array_merge( $columns, $add_columns );
+}
+
+add_filter ( 'hf_customer_csv_export_data', 'empdev_hf_customer_csv_export_data' );
+
+function empdev_hf_customer_csv_export_data( $customer_data ){
+	foreach ($customer_data as $key => $val ){
+		if ( $key == 'ID' ){
+			$id = $val;
+			$birthday = empdev_insert_colum_data($id);
+			$customer_data['birthday'] = $birthday;
+		}
+	}
+
+	return $customer_data;
+}
+
+//var_dump(insert_colum_data(2085));
+
+function empdev_insert_colum_data( $user_id ) {
+	//$user = get_userdata( $user_id );
+	global $wpuef_option_model,$wpuef_shortcodes;
+	$extra_fields = $wpuef_option_model->get_option('json_fields_string');
+	$column_name = 'c2';
+//	$user_id = 2085;
+
+	//return $extra_fields;
+
+	if($extra_fields)
+		foreach($extra_fields->fields as $extra_field)
+			//if($column_name == 'wpuef_'.$extra_field->cid)
+			return $wpuef_shortcodes->wpuef_show_field_value(array('user_id' => $user_id, 'field_id' => $column_name ));
+
+//	return $val;
+}
