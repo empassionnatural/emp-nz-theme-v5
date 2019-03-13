@@ -565,6 +565,9 @@ i.icon::before {
     .row-count-2 .product:nth-child(2n+1), .row-count-3 .product:nth-child(2n+1), .row-count-4 .product:nth-child(2n+1), .row-count-5 .product:nth-child(2n+1) {
         clear: none !important;
     }
+    .sidebar-mobile-top .sidebar.sidebar-left {
+        display: none;
+    }
     /*.woocommerce-cart .container .related_prod_container .product-slide {*/
         /*width: 32% !important;*/
     /*}*/
