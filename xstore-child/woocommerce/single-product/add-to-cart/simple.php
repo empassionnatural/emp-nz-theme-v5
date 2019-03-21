@@ -63,7 +63,7 @@ if( $new_customers_val ): ?>
 
         <form class="cart" method="post" enctype='multipart/form-data'>
 			<?php
-			// if ( ! $product->is_sold_individually() ) {
+            if ( ! $product->is_sold_individually() ) {
 
 			do_action( 'woocommerce_before_add_to_cart_button' );
 			/**
@@ -84,7 +84,8 @@ if( $new_customers_val ): ?>
 			 * @since 3.0.0.
 			 */
 			do_action( 'woocommerce_after_add_to_cart_quantity' );
-			// }
+
+            }
             $stock = get_post_meta( $post->ID, '_stock', true );
             if( $stock > 0 ) {
                 echo wc_get_stock_html( $product );
