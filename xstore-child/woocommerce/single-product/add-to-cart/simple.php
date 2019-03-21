@@ -70,6 +70,7 @@ if( $new_customers_val ): ?>
 			 * @since 3.0.0.
 			 */
 
+
             echo "<p class='input-quantity'>Quantity</p>";
 
 			do_action( 'woocommerce_before_add_to_cart_quantity' );
