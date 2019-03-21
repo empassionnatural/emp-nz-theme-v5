@@ -1,6 +1,93 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
+function etheme_project_links( $atts, $content = null ) {
+
+	global $post;
+	$is_product = false;
+	$exclude_category = array( '438', '103' );
+
+	if ( $post->post_type == 'product' ) {
+		$is_product = true;
+
+		$next_post = get_adjacent_post( 1, $exclude_category, 0, 'product_cat' );
+		$prev_post = get_adjacent_post( 1, $exclude_category, 1, 'product_cat' );
+
+		if ( ! empty( $next_post ) && $next_post->post_type == 'product' ) {
+			$next_post = et_visible_pruduct( $next_post->ID, 'next' );
+		}
+
+		if ( ! empty( $prev_post ) && $prev_post->post_type == 'product' ) {
+			$prev_post = et_visible_pruduct( $prev_post->ID, 'prev' );
+		}
+
+	} else {
+
+
+		$next_post = get_next_post( false, $exclude_category );
+		$prev_post = get_previous_post( false, $exclude_category );
+	}
+	?>
+    <div class="posts-navigation">
+		<?php if(!empty($prev_post)) :
+			if ( function_exists('mb_strlen') ) {
+				$prev_symbols = (mb_strlen(get_the_title($prev_post->ID)) > 30) ? '...' : '';
+				$title = mb_substr(get_the_title($prev_post->ID),0,30) . $prev_symbols;
+			}
+			else {
+				$prev_symbols = (strlen(get_the_title($prev_post->ID)) > 30) ? '...' : '';
+				$title = substr(get_the_title($prev_post->ID),0,30) . $prev_symbols;
+			}?>
+            <div class="posts-nav-btn prev-post test">
+                <div class="post-info">
+                    <div class="post-details">
+                        <a href="<?php echo get_permalink($prev_post->ID); ?>" class="post-title">
+							<?php echo esc_html($title); ?>
+                        </a>
+						<?php if ( $is_product ) {
+							$p = wc_get_product($prev_post);
+							echo '<p class="price">'.$p->get_price_html().'</p>';
+						} ?>
+                    </div>
+                    <a href="<?php echo get_permalink($prev_post->ID); ?>">
+						<?php $img = get_the_post_thumbnail( $prev_post->ID, array(90, 90));
+						echo (!empty($img) ) ? $img : '<img src="'.ETHEME_BASE_URI.'images/placeholder.jpg">';  ?>
+                    </a>
+                </div>
+            </div>
+		<?php endif; ?>
+
+		<?php if(!empty($next_post)) :
+			if ( function_exists('mb_strlen') ) {
+				$next_symbols = (mb_strlen(get_the_title($next_post->ID)) > 30) ? '...' : '';
+				$title = mb_substr(get_the_title($next_post->ID),0,30) . $next_symbols;
+			}
+			else {
+				$next_symbols = (strlen(get_the_title($next_post->ID)) > 30) ? '...' : '';
+				$title = substr(get_the_title($next_post->ID),0,30) . $next_symbols;
+			} ?>
+            <div class="posts-nav-btn next-post test2">
+                <div class="post-info">
+                    <a href="<?php echo get_permalink($next_post->ID); ?>">
+						<?php $img = get_the_post_thumbnail( $next_post->ID, array(90, 90));
+						echo (!empty($img) ) ? $img : '<img src="'.ETHEME_BASE_URI.'images/placeholder.jpg">';  ?>
+                    </a>
+                    <div class="post-details">
+                        <a href="<?php echo get_permalink($next_post->ID); ?>" class="post-title">
+							<?php echo esc_html($title); ?>
+                        </a>
+						<?php if ( $is_product ) {
+							$p = wc_get_product($next_post);
+							echo '<p class="price">'.$p->get_price_html().'</p>';
+						} ?>
+                    </div>
+                </div>
+            </div>
+		<?php endif; ?>
+    </div>
+	<?php wp_reset_query();
+}
+
 function empdev_etheme_top_links($args = array()) {
 
 	$links = etheme_get_links($args);
